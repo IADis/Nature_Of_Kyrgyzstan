@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "945112694996",
+    "project_id": "nature-of-kyrgyzstan",
+    "storage_bucket": "nature-of-kyrgyzstan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945112694996:android:ccc1c669cb6d629cfd7b41",
+        "android_client_info": {
+          "package_name": "com.example.nature_of_kyrgyzstan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945112694996-0nm849756rtsvkkumddfcarr32bkphnr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk6zWLQK5-1Hs2i4XRJrZTk0soYvBbrsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945112694996-0nm849756rtsvkkumddfcarr32bkphnr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
