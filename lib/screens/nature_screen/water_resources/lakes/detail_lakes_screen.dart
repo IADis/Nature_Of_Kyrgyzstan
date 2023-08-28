@@ -51,6 +51,8 @@ class _LakesDetailScreenState extends State<LakesDetailScreen> {
           SliverAppBarWidget(
             image: data['image'],
             name: data['name'],
+            sliverHeight: 30,
+            containerHeight: 40,
           ),
           SliverToBoxAdapter(
             child: SizedBox(

@@ -43,7 +43,6 @@ class _NatureScrennState extends State<NatureScrenn>
             height: 210,
             child: MainWaterResourses(),
           ),
-          const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: SingleChildScrollView(

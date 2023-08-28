@@ -36,6 +36,8 @@ class _GorgesDetailsScreenState extends State<ReservesDetailsScreen> {
           SliverAppBarWidget(
             image: data['image'],
             name: data['name'],
+            sliverHeight: 70,
+            containerHeight: 90,
           ),
           SliverToBoxAdapter(
             child: SizedBox(

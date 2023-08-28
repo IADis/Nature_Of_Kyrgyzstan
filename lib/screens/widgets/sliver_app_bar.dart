@@ -3,14 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_text.dart';
 
 class SliverAppBarWidget extends StatelessWidget {
-  const SliverAppBarWidget({
-    super.key,
-    required this.name,
-    required this.image,
-  });
+  const SliverAppBarWidget(
+      {super.key,
+      required this.name,
+      required this.image,
+      required this.sliverHeight,
+      required this.containerHeight});
 
   final String name;
   final String image;
+  final double sliverHeight;
+  final double containerHeight;
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +44,9 @@ class SliverAppBarWidget extends StatelessWidget {
         ),
       ),
       bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(30),
+        preferredSize: Size.fromHeight(sliverHeight),
         child: Container(
-          height: 45,
+          height: containerHeight,
           width: double.infinity,
           decoration: const BoxDecoration(
             color: Colors.white,

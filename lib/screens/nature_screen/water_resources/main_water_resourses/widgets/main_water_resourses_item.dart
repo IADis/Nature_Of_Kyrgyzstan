@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/main_reserves/model/reserves_model.dart';
+
+import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/main_water_resourses/model/water_resourses_model.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/main_list_item.dart';
 
-class MainReservesItem extends StatelessWidget {
-  const MainReservesItem({
-    required this.model,
+class WaterResoursesItem extends StatelessWidget {
+  const WaterResoursesItem({
     super.key,
+    required this.model,
   });
 
-  final ReservesModel model;
-
+  final WaterResoursesModel model;
   @override
   Widget build(BuildContext context) {
     return MainListItem(

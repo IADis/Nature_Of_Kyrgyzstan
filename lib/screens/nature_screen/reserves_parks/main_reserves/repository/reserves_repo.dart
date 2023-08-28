@@ -10,17 +10,20 @@ class ReservesRepo {
 
   final _mountains = [
     ReservesModel(
-      image: 'https://ecostan.kg/uploads/posts/2019-07/1563700182_a60a5493.jpg',
+      image:
+          'https://photocasa.ru/uploads/posts/2022-07/1657184165_gudinalv_nevesomost_nature-aesthetic_ljudmila-gudina-ljudmila-vitalevna-gudina.jpg',
       name: 'Общая Инфорамация',
       navigate: const GeneralInfoScreen(),
     ),
     ReservesModel(
-      image: 'https://ecostan.kg/uploads/posts/2019-07/1563703284_0-42.jpg',
+      image:
+          'https://firebasestorage.googleapis.com/v0/b/nature-of-kyrgyzstan.appspot.com/o/gorges%2FKarakol%2FKarakol4.jpg?alt=media&token=12e79257-ddf2-4b94-a89d-9c6c8532af41',
       name: 'Заповедники',
       navigate: const ReservesScreen(),
     ),
     ReservesModel(
-      image: 'https://ecostan.kg/uploads/posts/2019-07/1563703266_0-23.jpg',
+      image:
+          'https://www.fotoget.net/wp-content/uploads/2016/02/man_north-1650x1100.jpg',
       name: 'Парки',
       navigate: const ParksScreen(),
     ),

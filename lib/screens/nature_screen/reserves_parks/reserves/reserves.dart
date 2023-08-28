@@ -25,7 +25,7 @@ class _GorgesScreenState extends State<ReservesScreen> {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
       appBar: AppBarWithSearchWidget(
-        text: 'Ущелья',
+        text: 'Заповедники',
         onChanged: (value) {
           setState(() {});
         },

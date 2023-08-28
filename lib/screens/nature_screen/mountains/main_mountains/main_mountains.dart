@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/mountains/main_mountains/bloc/mountains_bloc.dart';
-import 'widgets/main_mointain_item.dart';
+import 'widgets/main_mountain_item.dart';
 
 class MainMountain extends StatefulWidget {
   const MainMountain({super.key});

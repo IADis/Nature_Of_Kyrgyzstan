@@ -12,22 +12,26 @@ class WaterResoursesRepo {
   final _waterResourses = [
     WaterResoursesModel(
       name: 'Озёра',
-      image: 'assets/images/lakes.jpg',
+      image:
+          'https://firebasestorage.googleapis.com/v0/b/nature-of-kyrgyzstan.appspot.com/o/main_images%2FLakes.webp?alt=media&token=5c88e8f7-0e05-4b16-adcb-b6f615a19187',
       navigate: const LakesScreen(),
     ),
     WaterResoursesModel(
       name: 'Реки',
-      image: 'assets/images/rivers.webp',
+      image:
+          'https://firebasestorage.googleapis.com/v0/b/nature-of-kyrgyzstan.appspot.com/o/main_images%2FRivers.jpg?alt=media&token=75b55eea-b85d-4fec-8096-62ad2308578f',
       navigate: const RiversScreen(),
     ),
     WaterResoursesModel(
       name: 'Водохранилища',
-      image: 'assets/images/reservoir.jpg',
+      image:
+          'https://firebasestorage.googleapis.com/v0/b/nature-of-kyrgyzstan.appspot.com/o/main_images%2FReservoir.jpg?alt=media&token=8b566f65-2d22-4231-8f8b-e2ce01f97bf4',
       navigate: const ReservoirsScreen(),
     ),
     WaterResoursesModel(
       name: 'Водопады',
-      image: 'assets/images/watterfalls.jpg',
+      image:
+          'https://firebasestorage.googleapis.com/v0/b/nature-of-kyrgyzstan.appspot.com/o/main_images%2FWatterfalls.jpg?alt=media&token=2d1aa7e5-2bbe-499f-9f72-c553a08e2967',
       navigate: const WatterfallsScreen(),
     ),
   ];

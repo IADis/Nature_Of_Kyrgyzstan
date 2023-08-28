@@ -28,8 +28,9 @@ class _MainMountainState extends State<MainReserves> {
                 width: 20,
               ),
               itemCount: state.reserves.length,
-              itemBuilder: (context, index) =>
-                  MainReservesItem(model: state.reserves[index]),
+              itemBuilder: (context, index) => MainReservesItem(
+                model: state.reserves[index],
+              ),
             );
           }
           return const Center(child: CircularProgressIndicator());
