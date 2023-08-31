@@ -12,8 +12,7 @@ class NatureScrenn extends StatefulWidget {
   State<NatureScrenn> createState() => _NatureScrennState();
 }
 
-class _NatureScrennState extends State<NatureScrenn>
-    with SingleTickerProviderStateMixin {
+class _NatureScrennState extends State<NatureScrenn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

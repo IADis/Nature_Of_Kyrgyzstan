@@ -7,7 +7,7 @@ class WaterResouresBloc extends Bloc<WaterResoursesEvent, WaterResoursesState> {
       : _waterResoursesRepo = waterResoursesRepo,
         super(WaterResoursesInitial()) {
     on<GetWaterResourses>(
-      (event, emit) async {
+      (event, emit) {
         final model = _waterResoursesRepo.getWaterResourses();
         emit(WaterResoursesSuccess(waterResourses: model));
       },

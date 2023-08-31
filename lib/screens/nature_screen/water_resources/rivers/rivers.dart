@@ -12,7 +12,6 @@ class RiversScreen extends StatefulWidget {
 }
 
 class _RiversScreenState extends State<RiversScreen> {
-  final _controller = PageController();
   @override
   Widget build(BuildContext context) {
     Stream<QuerySnapshot> rivers =
@@ -37,7 +36,6 @@ class _RiversScreenState extends State<RiversScreen> {
             return RiversList(
               name: data['name'],
               bodyText: data['bodyText'],
-              controller: _controller,
               pageViewImages: [
                 PageViewImages(image: data['pageViewImage1']),
                 PageViewImages(image: data['pageViewImage2']),

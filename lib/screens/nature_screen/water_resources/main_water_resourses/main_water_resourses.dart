@@ -13,11 +13,6 @@ class MainWaterResourses extends StatelessWidget {
       backgroundColor: AppColors.scaffoldBackgroundColor,
       body: BlocBuilder<WaterResouresBloc, WaterResoursesState>(
         builder: (context, state) {
-          if (state is WaterResoursesError) {
-            return const Center(
-              child: Text('ERROR'),
-            );
-          }
           if (state is WaterResoursesSuccess) {
             return ListView.separated(
               physics: const BouncingScrollPhysics(),
