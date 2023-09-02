@@ -1,21 +1,21 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
-import 'package:nature_of_kyrgyzstan/screens/widgets/body_text.dart';
-import 'package:nature_of_kyrgyzstan/screens/widgets/sliver_app_bar.dart';
-import '../../../widgets/page_view_images.dart';
-import '../../../widgets/smooth_page.dart';
 
-class ReservesDetailsScreen extends StatefulWidget {
-  const ReservesDetailsScreen({super.key, required this.documentSnapshot});
+import '../../../../../components/app_colors.dart';
+import '../../../../widgets/body_text.dart';
+import '../../../../widgets/page_view_images.dart';
+import '../../../../widgets/sliver_app_bar.dart';
+import '../../../../widgets/smooth_page.dart';
 
+class IssykKulDetailScreen extends StatefulWidget {
+  const IssykKulDetailScreen({super.key, required this.documentSnapshot});
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<ReservesDetailsScreen> createState() => _GorgesDetailsScreenState();
+  State<IssykKulDetailScreen> createState() => _AlaArchaDetailScreenState();
 }
 
-class _GorgesDetailsScreenState extends State<ReservesDetailsScreen> {
+class _AlaArchaDetailScreenState extends State<IssykKulDetailScreen> {
   final _controller = PageController();
 
   @override
@@ -27,7 +27,6 @@ class _GorgesDetailsScreenState extends State<ReservesDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     final dynamic data = widget.documentSnapshot;
-
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
       body: CustomScrollView(
@@ -36,7 +35,7 @@ class _GorgesDetailsScreenState extends State<ReservesDetailsScreen> {
           SliverAppBarWidget(
             image: data['image'],
             name: data['name'],
-            sliverHeight: 70,
+            sliverHeight: 75,
             containerHeight: 90,
           ),
           SliverToBoxAdapter(

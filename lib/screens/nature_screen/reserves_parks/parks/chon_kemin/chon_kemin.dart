@@ -18,19 +18,18 @@ class _AlaArchaState extends State<ChonKemin> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: parks,
-      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-        if (snapshot.hasError) {
-          return const Center(
-            child: Text('ERROR'),
-          );
-        }
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-        if (snapshot.hasData) {
+        stream: parks,
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return const Center(
+              child: Text('ERROR'),
+            );
+          }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
           final data = snapshot.data!.docs[1];
           return ListViewItems(
             image: data['image'],
@@ -45,9 +44,6 @@ class _AlaArchaState extends State<ChonKemin> {
               ),
             ),
           );
-        }
-        return const Center(child: CircularProgressIndicator());
-      },
-    );
+        });
   }
 }

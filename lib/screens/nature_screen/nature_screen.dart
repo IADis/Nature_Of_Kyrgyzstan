@@ -17,45 +17,59 @@ class _NatureScrennState extends State<NatureScrenn> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 60),
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Text(
-              'Горы',
-              style: AppText.mainTitleTextStyle,
-            ),
+      body: CustomScrollView(
+        slivers: [
+          const SliverToBoxAdapter(
+            child: SizedBox(height: 60),
           ),
-          const SizedBox(
-            height: 210,
-            child: MainMountain(),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Text(
-              'Водные ресуры',
-              style: AppText.mainTitleTextStyle,
-            ),
-          ),
-          const SizedBox(
-            height: 210,
-            child: MainWaterResourses(),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Text(
-                'Заповедники. Национальные парки. Заказники.',
+                'Горы',
                 style: AppText.mainTitleTextStyle,
               ),
             ),
           ),
-          const SizedBox(
-            height: 210,
-            child: MainReserves(),
-          )
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 220,
+              child: MainMountain(),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Text(
+                'Водные ресуры',
+                style: AppText.mainTitleTextStyle,
+              ),
+            ),
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 220,
+              child: MainWaterResourses(),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Text(
+                  'Заповедники. Национальные парки. Заказники.',
+                  style: AppText.mainTitleTextStyle,
+                ),
+              ),
+            ),
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 220,
+              child: MainReserves(),
+            ),
+          ),
         ],
       ),
     );

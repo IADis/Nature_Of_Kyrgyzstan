@@ -1,70 +1,52 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
-import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/detail_reserves_screen.dart';
-import 'package:page_transition/page_transition.dart';
-import '../../../widgets/app_bar_with_search.dart';
-import '../../../widgets/list_view_items.dart';
+import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/besh_aral/besh_aral.dart';
+import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/dashman/dashman.dart';
+import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/issyk_kul/issyk_kul.dart';
+import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/karatal_khapyryk/karatal_khapyryk.dart';
+import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/kulun_ata/kulun_ata.dart';
+import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/naryn/naryn.dart';
+import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/padysh_ata/padysh_ata.dart';
+import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/sary_chelek/sary_chelek.dart';
+import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/sarychat_ertash/sarychat_ertash.dart';
+import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/surma_tash/surma_tash.dart';
 
-class ReservesScreen extends StatefulWidget {
-  const ReservesScreen({
-    super.key,
-  });
+class ReservesScreen extends StatelessWidget {
+  const ReservesScreen({super.key});
 
-  @override
-  State<ReservesScreen> createState() => _GorgesScreenState();
-}
-
-class _GorgesScreenState extends State<ReservesScreen> {
-  Stream<QuerySnapshot> reserves = FirebaseFirestore.instance
-      .collection('reserves')
-      .orderBy('name')
-      .snapshots();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: AppBarWithSearchWidget(
-        text: 'Заповедники',
-        onChanged: (value) {
-          setState(() {});
-        },
-      ),
-      body: StreamBuilder<QuerySnapshot>(
-        stream: reserves,
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (snapshot.hasError) {
-            return const Text('Error');
-          }
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-          return ListView.separated(
-            shrinkWrap: true,
-            physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.symmetric(vertical: 15),
-            separatorBuilder: (context, index) => const SizedBox(height: 20),
-            itemCount: snapshot.data!.docs.length,
-            itemBuilder: (context, index) {
-              final data = snapshot.data!.docs[index];
-              return ListViewItems(
-                image: data['image'],
-                name: data['name'],
-                navigate: () => Navigator.push(
-                  context,
-                  PageTransition(
-                    duration: const Duration(seconds: 1),
-                    reverseDuration: const Duration(seconds: 1),
-                    type: PageTransitionType.rightToLeft,
-                    child: ReservesDetailsScreen(documentSnapshot: data),
-                  ),
-                ),
-              );
-            },
-          );
-        },
+      appBar: AppBar(),
+      body: const CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                SizedBox(height: 20),
+                IssykKul(),
+                SizedBox(height: 20),
+                SaryChelek(),
+                SizedBox(height: 20),
+                BeshAral(),
+                SizedBox(height: 20),
+                Naryn(),
+                SizedBox(height: 20),
+                KaratalKhapyryk(),
+                SizedBox(height: 20),
+                SarychatErtash(),
+                SizedBox(height: 20),
+                PadyshAta(),
+                SizedBox(height: 20),
+                KulunAta(),
+                SizedBox(height: 20),
+                SurmaTash(),
+                SizedBox(height: 20),
+                Dashman(),
+                SizedBox(height: 20),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

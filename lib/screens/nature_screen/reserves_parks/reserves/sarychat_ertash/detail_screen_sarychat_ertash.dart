@@ -7,15 +7,16 @@ import '../../../../widgets/page_view_images.dart';
 import '../../../../widgets/sliver_app_bar.dart';
 import '../../../../widgets/smooth_page.dart';
 
-class AlatayDetailScreen extends StatefulWidget {
-  const AlatayDetailScreen({super.key, required this.documentSnapshot});
+class SarychatErtashDetailScreen extends StatefulWidget {
+  const SarychatErtashDetailScreen({super.key, required this.documentSnapshot});
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<AlatayDetailScreen> createState() => _AlaArchaDetailScreenState();
+  State<SarychatErtashDetailScreen> createState() =>
+      _AlaArchaDetailScreenState();
 }
 
-class _AlaArchaDetailScreenState extends State<AlatayDetailScreen> {
+class _AlaArchaDetailScreenState extends State<SarychatErtashDetailScreen> {
   final _controller = PageController();
 
   @override
@@ -52,17 +53,12 @@ class _AlaArchaDetailScreenState extends State<AlatayDetailScreen> {
                   PageViewImages(image: data['pageViewImage8']),
                   PageViewImages(image: data['pageViewImage9']),
                   PageViewImages(image: data['pageViewImage10']),
-                  PageViewImages(image: data['pageViewImage11']),
-                  PageViewImages(image: data['pageViewImage12']),
-                  PageViewImages(image: data['pageViewImage13']),
-                  PageViewImages(image: data['pageViewImage14']),
-                  PageViewImages(image: data['pageViewImage15']),
                 ])),
           ),
           SliverToBoxAdapter(
             child: SmoothIndicatorWidget(
               controller: _controller,
-              count: 15,
+              count: 10,
             ),
           ),
           const SliverToBoxAdapter(

@@ -31,23 +31,20 @@ class _AlaArchaState extends State<Karakol> {
             child: CircularProgressIndicator(),
           );
         }
-        if (snapshot.hasData) {
-          final data = snapshot.data!.docs[5];
-          return ListViewItems(
-            image: data['image'],
-            name: data['name'],
-            navigate: () => Navigator.push(
-              context,
-              PageTransition(
-                duration: const Duration(seconds: 1),
-                reverseDuration: const Duration(seconds: 1),
-                type: PageTransitionType.rightToLeft,
-                child: BeshTashDetailScreen(documentSnapshot: data),
-              ),
+        final data = snapshot.data!.docs[5];
+        return ListViewItems(
+          image: data['image'],
+          name: data['name'],
+          navigate: () => Navigator.push(
+            context,
+            PageTransition(
+              duration: const Duration(seconds: 1),
+              reverseDuration: const Duration(seconds: 1),
+              type: PageTransitionType.rightToLeft,
+              child: BeshTashDetailScreen(documentSnapshot: data),
             ),
-          );
-        }
-        return const Center(child: CircularProgressIndicator());
+          ),
+        );
       },
     );
   }

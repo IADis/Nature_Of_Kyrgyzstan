@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/parks/ala_archa/ala_archa.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/parks/alatay/alatay.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/parks/besh_tash/besh_tash.dart';
@@ -11,47 +12,70 @@ import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/parks/
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/parks/salkyn_tor/salkyn_tor.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/parks/sarkent/sarkent.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
+import 'package:nature_of_kyrgyzstan/screens/widgets/list_view_items.dart';
 import 'kyrgyz_ata/kyrgyz_ata.dart';
 import 'saimaluu_tash/saimaluu_tash.dart';
 
-class ParksScreen extends StatelessWidget {
+class ParksScreen extends StatefulWidget {
   const ParksScreen({super.key});
 
   @override
+  State<ParksScreen> createState() => _ParksScreenState();
+}
+
+class _ParksScreenState extends State<ParksScreen> {
+  List parks = const [
+    AlaArcha(),
+    KyrgyzAta(),
+    KaraShoro(),
+    BeshTash(),
+    ChonKemin(),
+    Karakol(),
+    SalkynTor(),
+    SaimaluuTash(),
+    Sarkent(),
+    KaraBuura(),
+    KanAchuu(),
+    Alatay(),
+    KhanTeniri(),
+  ];
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarWidget(),
-      body: ListView(
-        children: const [
-          SizedBox(height: 20),
-          AlaArcha(),
-          SizedBox(height: 20),
-          KyrgyzAta(),
-          SizedBox(height: 20),
-          KaraShoro(),
-          SizedBox(height: 20),
-          BeshTash(),
-          SizedBox(height: 20),
-          ChonKemin(),
-          SizedBox(height: 20),
-          Karakol(),
-          SizedBox(height: 20),
-          SalkynTor(),
-          SizedBox(height: 20),
-          SaimaluuTash(),
-          SizedBox(height: 20),
-          Sarkent(),
-          SizedBox(height: 20),
-          KaraBuura(),
-          SizedBox(height: 20),
-          KanAchuu(),
-          SizedBox(height: 20),
-          Alatay(),
-          SizedBox(height: 20),
-          KhanTeniri(),
-          SizedBox(height: 20),
-        ],
-      ),
-    );
+        backgroundColor: AppColors.scaffoldBackgroundColor,
+        appBar: const AppBarWidget(),
+        body: const SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+              AlaArcha(),
+              SizedBox(height: 20),
+              KyrgyzAta(),
+              SizedBox(height: 20),
+              KaraShoro(),
+              SizedBox(height: 20),
+              BeshTash(),
+              SizedBox(height: 20),
+              ChonKemin(),
+              SizedBox(height: 20),
+              Karakol(),
+              SizedBox(height: 20),
+              SalkynTor(),
+              SizedBox(height: 20),
+              SaimaluuTash(),
+              SizedBox(height: 20),
+              Sarkent(),
+              SizedBox(height: 20),
+              KaraBuura(),
+              SizedBox(height: 20),
+              KanAchuu(),
+              SizedBox(height: 20),
+              Alatay(),
+              SizedBox(height: 20),
+              KhanTeniri(),
+              SizedBox(height: 20),
+            ],
+          ),
+        ));
   }
 }

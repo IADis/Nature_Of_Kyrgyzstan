@@ -30,23 +30,20 @@ class _AlaArchaState extends State<SaimaluuTash> {
             child: CircularProgressIndicator(),
           );
         }
-        if (snapshot.hasData) {
-          final data = snapshot.data!.docs[0];
-          return ListViewItems(
-            image: data['image'],
-            name: data['name'],
-            navigate: () => Navigator.push(
-              context,
-              PageTransition(
-                duration: const Duration(seconds: 1),
-                reverseDuration: const Duration(seconds: 1),
-                type: PageTransitionType.rightToLeft,
-                child: DetailScreenSaimaluuTash(documentSnapshot: data),
-              ),
+        final data = snapshot.data!.docs[0];
+        return ListViewItems(
+          image: data['image'],
+          name: data['name'],
+          navigate: () => Navigator.push(
+            context,
+            PageTransition(
+              duration: const Duration(seconds: 1),
+              reverseDuration: const Duration(seconds: 1),
+              type: PageTransitionType.rightToLeft,
+              child: DetailScreenSaimaluuTash(documentSnapshot: data),
             ),
-          );
-        }
-        return const Center(child: CircularProgressIndicator());
+          ),
+        );
       },
     );
   }
