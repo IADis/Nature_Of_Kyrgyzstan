@@ -4,7 +4,6 @@ import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/mountains/canyons/detail_canyons_screen.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/list_view_items.dart';
-import 'package:page_transition/page_transition.dart';
 
 class CanyonsScreen extends StatefulWidget {
   const CanyonsScreen({super.key});
@@ -48,15 +47,7 @@ class _CanyonsScreenState extends State<CanyonsScreen> {
                 return ListViewItems(
                   image: data['image'],
                   name: data['name'],
-                  navigate: () => Navigator.push(
-                    context,
-                    PageTransition(
-                      duration: const Duration(seconds: 1),
-                      reverseDuration: const Duration(seconds: 1),
-                      type: PageTransitionType.rightToLeft,
-                      child: CanyonsDetailScreen(documentSnapshot: data),
-                    ),
-                  ),
+                  navigate: CanyonsDetailScreen(documentSnapshot: data),
                 );
               },
             );

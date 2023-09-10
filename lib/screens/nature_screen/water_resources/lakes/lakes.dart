@@ -4,7 +4,6 @@ import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar_with_search.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/list_view_items.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/lakes/detail_lakes_screen.dart';
-import 'package:page_transition/page_transition.dart';
 
 class LakesScreen extends StatefulWidget {
   const LakesScreen({super.key});
@@ -51,19 +50,10 @@ class _LakesScreenState extends State<LakesScreen> {
             itemBuilder: (context, index) {
               final data = snapshot.data!.docs[index];
               return ListViewItems(
-                  image: data['image'],
-                  name: data['name'],
-                  navigate: () {
-                    Navigator.push(
-                      context,
-                      PageTransition(
-                        duration: const Duration(seconds: 1),
-                        reverseDuration: const Duration(seconds: 1),
-                        type: PageTransitionType.rightToLeft,
-                        child: LakesDetailScreen(documentSnapshot: data),
-                      ),
-                    );
-                  });
+                image: data['image'],
+                name: data['name'],
+                navigate: LakesDetailScreen(documentSnapshot: data),
+              );
             },
           );
         },

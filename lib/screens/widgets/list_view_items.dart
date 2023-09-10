@@ -11,7 +11,7 @@ class ListViewItems extends StatefulWidget {
   });
   final String image;
   final String name;
-  final Function() navigate;
+  final Widget navigate;
 
   @override
   State<ListViewItems> createState() => _ListViewItemsState();
@@ -50,7 +50,12 @@ class _ListViewItemsState extends State<ListViewItems>
       imageBuilder: (context, imageProvider) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: InkWell(
-          onTap: widget.navigate,
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => widget.navigate,
+            ),
+          ),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             height: 170,

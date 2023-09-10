@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
 import '../../../../widgets/list_view_items.dart';
 import 'detail_screen.salkyn_tor.dart';
 
@@ -34,15 +33,7 @@ class _AlaArchaState extends State<SalkynTor> {
         return ListViewItems(
           image: data['image'],
           name: data['name'],
-          navigate: () => Navigator.push(
-            context,
-            PageTransition(
-              duration: const Duration(seconds: 1),
-              reverseDuration: const Duration(seconds: 1),
-              type: PageTransitionType.rightToLeft,
-              child: SalkynTorDetailScreen(documentSnapshot: data),
-            ),
-          ),
+          navigate: SalkynTorDetailScreen(documentSnapshot: data),
         );
       },
     );

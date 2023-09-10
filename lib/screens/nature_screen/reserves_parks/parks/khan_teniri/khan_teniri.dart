@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
 import '../../../../widgets/list_view_items.dart';
 import 'detail_screen_khan_teniri.dart';
 
@@ -35,15 +34,7 @@ class _AlaArchaState extends State<KhanTeniri> {
           return ListViewItems(
             image: data['image'],
             name: data['name'],
-            navigate: () => Navigator.push(
-              context,
-              PageTransition(
-                duration: const Duration(seconds: 1),
-                reverseDuration: const Duration(seconds: 1),
-                type: PageTransitionType.rightToLeft,
-                child: KhanTeniriDetailScreen(documentSnapshot: data),
-              ),
-            ),
+            navigate: KhanTeniriDetailScreen(documentSnapshot: data),
           );
         });
   }

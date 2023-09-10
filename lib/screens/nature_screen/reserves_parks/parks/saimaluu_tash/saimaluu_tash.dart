@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/parks/saimaluu_tash/detail_screen_saimaluu_tash.dart';
-import 'package:page_transition/page_transition.dart';
 import '../../../../widgets/list_view_items.dart';
 
 class SaimaluuTash extends StatefulWidget {
@@ -34,15 +33,7 @@ class _AlaArchaState extends State<SaimaluuTash> {
         return ListViewItems(
           image: data['image'],
           name: data['name'],
-          navigate: () => Navigator.push(
-            context,
-            PageTransition(
-              duration: const Duration(seconds: 1),
-              reverseDuration: const Duration(seconds: 1),
-              type: PageTransitionType.rightToLeft,
-              child: DetailScreenSaimaluuTash(documentSnapshot: data),
-            ),
-          ),
+          navigate: DetailScreenSaimaluuTash(documentSnapshot: data),
         );
       },
     );

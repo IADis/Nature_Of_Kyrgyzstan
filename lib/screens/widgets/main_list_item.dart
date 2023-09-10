@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 
 class MainListItem extends StatelessWidget {
   const MainListItem({
@@ -22,11 +21,9 @@ class MainListItem extends StatelessWidget {
       borderRadius: BorderRadius.circular(5),
       onTap: () => Navigator.push(
         context,
-        PageTransition(
-            reverseDuration: const Duration(seconds: 1),
-            duration: const Duration(seconds: 1),
-            child: modelNavigate,
-            type: PageTransitionType.bottomToTop),
+        MaterialPageRoute(
+          builder: (context) => modelNavigate,
+        ),
       ),
       child: CachedNetworkImage(
         imageUrl: modelImage,

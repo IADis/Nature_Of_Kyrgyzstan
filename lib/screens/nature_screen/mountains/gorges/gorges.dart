@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
-import 'package:page_transition/page_transition.dart';
 import '../../../widgets/app_bar_with_search.dart';
 import '../../../widgets/list_view_items.dart';
 import 'datail_gorges_screen.dart';
@@ -15,8 +14,7 @@ class GorgesScreen extends StatefulWidget {
   State<GorgesScreen> createState() => _GorgesScreenState();
 }
 
-class _GorgesScreenState extends State<GorgesScreen>
-    with SingleTickerProviderStateMixin {
+class _GorgesScreenState extends State<GorgesScreen> {
   Stream<QuerySnapshot> gorges = FirebaseFirestore.instance
       .collection('gorges')
       .orderBy('name')
@@ -39,32 +37,32 @@ class _GorgesScreenState extends State<GorgesScreen>
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: Colors.orange,
+              ),
             );
           }
-
-          return ListView.separated(
-            shrinkWrap: true,
-            physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.symmetric(vertical: 15),
-            separatorBuilder: (context, index) => const SizedBox(height: 20),
-            itemCount: snapshot.data!.docs.length,
-            itemBuilder: (context, index) {
-              final data = snapshot.data!.docs[index];
-              return ListViewItems(
-                image: data['image'],
-                name: data['name'],
-                navigate: () => Navigator.push(
-                  context,
-                  PageTransition(
-                    duration: const Duration(milliseconds: 600),
-                    reverseDuration: const Duration(milliseconds: 600),
-                    type: PageTransitionType.rightToLeft,
-                    child: GorgesDetailsScreen(documentSnapshot: data),
-                  ),
-                ),
-              );
-            },
+          if (snapshot.hasData) {
+            return ListView.separated(
+              shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
+              padding: const EdgeInsets.symmetric(vertical: 15),
+              separatorBuilder: (context, index) => const SizedBox(height: 20),
+              itemCount: snapshot.data!.docs.length,
+              itemBuilder: (context, index) {
+                final data = snapshot.data!.docs[index];
+                return ListViewItems(
+                  image: data['image'],
+                  name: data['name'],
+                  navigate: GorgesDetailsScreen(documentSnapshot: data),
+                );
+              },
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(
+              color: Colors.orange,
+            ),
           );
         },
       ),

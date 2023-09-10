@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 
 class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
   const AppBarWidget({super.key});
@@ -14,8 +15,8 @@ class _AppBarWidgetState extends State<AppBarWidget> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      foregroundColor: Colors.orange,
-      backgroundColor: Colors.white,
+      foregroundColor: AppColors.appBarForegruoundColor,
+      backgroundColor: AppColors.appBarBackgroundColor,
       elevation: 0,
     );
   }

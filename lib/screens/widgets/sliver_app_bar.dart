@@ -1,5 +1,7 @@
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/components/app_text.dart';
 
 class SliverAppBarWidget extends StatelessWidget {
@@ -18,7 +20,8 @@ class SliverAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: Colors.orange,
+      foregroundColor: Colors.orange,
+      backgroundColor: AppColors.scaffoldBackgroundColor,
       elevation: 0,
       pinned: true,
       stretch: true,
@@ -48,9 +51,9 @@ class SliverAppBarWidget extends StatelessWidget {
         child: Container(
           height: containerHeight,
           width: double.infinity,
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
+          decoration: BoxDecoration(
+            color: AppColors.scaffoldBackgroundColor,
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(30),
               topRight: Radius.circular(30),
             ),

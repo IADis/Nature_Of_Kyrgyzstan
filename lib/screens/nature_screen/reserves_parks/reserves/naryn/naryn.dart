@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/list_view_items.dart';
-import 'package:page_transition/page_transition.dart';
 import 'detail_screen_naryn.dart';
 
 class Naryn extends StatefulWidget {
@@ -35,15 +34,7 @@ class _AlaArchaState extends State<Naryn> {
           return ListViewItems(
             image: data['image'],
             name: data['name'],
-            navigate: () => Navigator.push(
-              context,
-              PageTransition(
-                duration: const Duration(seconds: 1),
-                reverseDuration: const Duration(seconds: 1),
-                type: PageTransitionType.rightToLeft,
-                child: NarynDetailScreen(documentSnapshot: data),
-              ),
-            ),
+            navigate: NarynDetailScreen(documentSnapshot: data),
           );
         }
         return const Center(child: CircularProgressIndicator());
