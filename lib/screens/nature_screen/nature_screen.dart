@@ -5,14 +5,14 @@ import 'package:nature_of_kyrgyzstan/screens/nature_screen/mountains/main_mounta
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/main_reserves/main_reserves.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/main_water_resourses/main_water_resourses.dart';
 
-class NatureScrenn extends StatefulWidget {
-  const NatureScrenn({super.key});
+class NatureScreen extends StatefulWidget {
+  const NatureScreen({super.key});
 
   @override
-  State<NatureScrenn> createState() => _NatureScrennState();
+  State<NatureScreen> createState() => _NatureScreenState();
 }
 
-class _NatureScrennState extends State<NatureScrenn> {
+class _NatureScreenState extends State<NatureScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +54,7 @@ class _NatureScrennState extends State<NatureScrenn> {
           ),
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.only(left: 30),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Text(

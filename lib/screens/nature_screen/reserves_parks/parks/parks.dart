@@ -11,8 +11,7 @@ import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/parks/
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/parks/khan_teniri/khan_teniri.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/parks/salkyn_tor/salkyn_tor.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/parks/sarkent/sarkent.dart';
-import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
-import 'package:nature_of_kyrgyzstan/screens/widgets/list_view_items.dart';
+import '../../../../components/app_text.dart';
 import 'kyrgyz_ata/kyrgyz_ata.dart';
 import 'saimaluu_tash/saimaluu_tash.dart';
 
@@ -43,7 +42,38 @@ class _ParksScreenState extends State<ParksScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColors.scaffoldBackgroundColor,
-        appBar: const AppBarWidget(),
+        appBar: AppBar(
+          toolbarHeight: 165,
+          leadingWidth: double.infinity,
+          leading: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                IconButton(
+                  splashColor: const Color(0x00000000),
+                  splashRadius: 0.1,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  'ГНПП - Государственный национальный природный парк',
+                  style: AppText.titleTextStyle,
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
+          ),
+          foregroundColor: AppColors.appBarForegruoundColor,
+          backgroundColor: AppColors.appBarBackgroundColor,
+          elevation: 0,
+        ),
         body: const SingleChildScrollView(
           child: Column(
             children: [

@@ -15,7 +15,8 @@ class GorgesScreen extends StatefulWidget {
   State<GorgesScreen> createState() => _GorgesScreenState();
 }
 
-class _GorgesScreenState extends State<GorgesScreen> {
+class _GorgesScreenState extends State<GorgesScreen>
+    with SingleTickerProviderStateMixin {
   Stream<QuerySnapshot> gorges = FirebaseFirestore.instance
       .collection('gorges')
       .orderBy('name')
@@ -41,6 +42,7 @@ class _GorgesScreenState extends State<GorgesScreen> {
               child: CircularProgressIndicator(),
             );
           }
+
           return ListView.separated(
             shrinkWrap: true,
             physics: const BouncingScrollPhysics(),
@@ -55,8 +57,8 @@ class _GorgesScreenState extends State<GorgesScreen> {
                 navigate: () => Navigator.push(
                   context,
                   PageTransition(
-                    duration: const Duration(seconds: 1),
-                    reverseDuration: const Duration(seconds: 1),
+                    duration: const Duration(milliseconds: 600),
+                    reverseDuration: const Duration(milliseconds: 600),
                     type: PageTransitionType.rightToLeft,
                     child: GorgesDetailsScreen(documentSnapshot: data),
                   ),

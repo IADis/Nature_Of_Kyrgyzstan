@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ListViewItems extends StatelessWidget {
+class ListViewItems extends StatefulWidget {
   const ListViewItems({
     super.key,
     required this.image,
@@ -14,13 +14,43 @@ class ListViewItems extends StatelessWidget {
   final Function() navigate;
 
   @override
+  State<ListViewItems> createState() => _ListViewItemsState();
+}
+
+class _ListViewItemsState extends State<ListViewItems>
+    with SingleTickerProviderStateMixin {
+  // late final AnimationController _controller;
+  // late final Animation<double> _animation;
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _controller =
+  //       AnimationController(vsync: this, duration: const Duration(seconds: 5));
+  //   _animation =
+  //       CurvedAnimation(parent: _controller, curve: Curves.linearToEaseOut);
+  //   _controller.addListener(() {
+  //     setState(() {
+  //       print(_controller.status);
+  //     });
+  //   });
+  //   _controller.forward();
+  // }
+
+  // @override
+  // void dispose() {
+  //   _controller.dispose();
+  //   super.dispose();
+  // }
+
+  @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl: image,
+      imageUrl: widget.image,
       imageBuilder: (context, imageProvider) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: InkWell(
-          onTap: navigate,
+          onTap: widget.navigate,
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             height: 170,
@@ -49,7 +79,7 @@ class ListViewItems extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  name,
+                  widget.name,
                   style: GoogleFonts.getFont(
                     'Montserrat',
                     color: Colors.white,

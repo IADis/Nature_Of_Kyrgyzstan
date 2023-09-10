@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/besh_aral/besh_aral.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/dashman/dashman.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/issyk_kul/issyk_kul.dart';
@@ -9,6 +10,7 @@ import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserv
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/sary_chelek/sary_chelek.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/sarychat_ertash/sarychat_ertash.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/reserves/surma_tash/surma_tash.dart';
+import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
 
 class ReservesScreen extends StatelessWidget {
   const ReservesScreen({super.key});
@@ -16,7 +18,8 @@ class ReservesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: AppColors.scaffoldBackgroundColor,
+      appBar: const AppBarWidget(),
       body: const CustomScrollView(
         slivers: [
           SliverToBoxAdapter(

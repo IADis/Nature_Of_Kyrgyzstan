@@ -12,7 +12,7 @@ class DashmanDetailScreen extends StatefulWidget {
 class _SurmaTashDetailScreenState extends State<DashmanDetailScreen> {
   @override
   Widget build(BuildContext context) {
-    final dynamic data = widget.documentSnapshot;
+    // final dynamic data = widget.documentSnapshot;
     return Scaffold(
       appBar: AppBar(),
     );

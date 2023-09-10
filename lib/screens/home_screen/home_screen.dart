@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/nature_screen.dart';
 import 'package:nature_of_kyrgyzstan/screens/setting_screen/settings.dart';
 
+import '../red_book/red_book_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -12,7 +14,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Widget> screens = [
-    const NatureScrenn(),
+    const NatureScreen(),
+    const RedBookScreen(),
     const SettingScreen(),
   ];
   int _currentIndex = 0;
@@ -31,9 +34,15 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const [
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.home,
+                Icons.nature,
               ),
-              label: 'Home'),
+              label: 'Природа'),
+          BottomNavigationBarItem(
+              backgroundColor: Colors.amber,
+              icon: Icon(
+                Icons.menu_book,
+              ),
+              label: 'Красная Книга'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.verified_user,
