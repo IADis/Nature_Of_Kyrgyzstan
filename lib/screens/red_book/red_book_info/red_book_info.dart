@@ -1,11 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
-import 'package:nature_of_kyrgyzstan/components/app_text.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
-
 import 'widgets/red_book_list.dart';
-import 'widgets/red_book_status.dart';
 
 class RedBoodInfo extends StatefulWidget {
   const RedBoodInfo({super.key});
