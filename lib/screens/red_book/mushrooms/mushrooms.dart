@@ -1,12 +1,9 @@
-import 'dart:ui';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
-import 'package:nature_of_kyrgyzstan/components/app_text.dart';
-import 'package:nature_of_kyrgyzstan/screens/red_book/mushrooms/mushrooms_detail_screen.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
+
+import '../widgets/red_book_list_items.dart';
 
 class MushroomsScreen extends StatefulWidget {
   const MushroomsScreen({super.key});
@@ -47,69 +44,11 @@ class _LakesScreenState extends State<MushroomsScreen> {
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (context, index) {
                 final data = snapshot.data!.docs[index];
-                return GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          MushroomsDetailScreen(documentSnapshot: data),
-                    ),
-                  ),
-                  child: SizedBox(
-                    height: 130,
-                    width: double.infinity,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10),
-                          child: Container(
-                            height: 110,
-                            width: 110,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: NetworkImage(
-                                  data['image'],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                data['name'].toString(),
-                                style: GoogleFonts.montserratAlternates(
-                                  fontSize: 18,
-                                  color: const Color(0xff232828),
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                              const SizedBox(height: 5),
-                              Text(
-                                data['nameLat'].toString(),
-                                style: GoogleFonts.raleway(
-                                  fontSize: 16,
-                                  color: const Color(0xff658282),
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                              const SizedBox(height: 10),
-                              const Divider(
-                                height: 5,
-                                color: Color(0xff658282),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                return RedBookListItems(
+                  image: data['image'],
+                  name: data['name'],
+                  nameLat: data['nameLat'],
+                  navigate: data,
                 );
               },
             );

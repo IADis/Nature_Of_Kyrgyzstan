@@ -35,4 +35,16 @@ class AppText {
     fontSize: 24,
     fontWeight: FontWeight.w500,
   );
+
+  static final redBookTitleText = GoogleFonts.montserratAlternates(
+    fontSize: 24,
+    color: const Color(0xff232828),
+    fontWeight: FontWeight.w700,
+  );
+
+  static final redBookBodyText = GoogleFonts.raleway(
+    fontSize: 18,
+    color: const Color(0xff232828),
+    fontWeight: FontWeight.w600,
+  );
 }
