@@ -4,8 +4,8 @@ import '../widgets/red_book_page_view.dart';
 import '../widgets/sliver_app_bar_large.dart';
 import '../widgets/sliver_list.dart';
 
-class MushroomsDetailScreen extends StatefulWidget {
-  const MushroomsDetailScreen({
+class PlantsDetailScreen extends StatefulWidget {
+  const PlantsDetailScreen({
     super.key,
     required this.documentSnapshot,
   });
@@ -13,10 +13,10 @@ class MushroomsDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<MushroomsDetailScreen> createState() => _LakesDetailScreenState();
+  State<PlantsDetailScreen> createState() => _LakesDetailScreenState();
 }
 
-class _LakesDetailScreenState extends State<MushroomsDetailScreen> {
+class _LakesDetailScreenState extends State<PlantsDetailScreen> {
   PageController _pageController = PageController();
   double pageOffset = 0;
 

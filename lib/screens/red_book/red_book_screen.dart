@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/red_book_info/red_book_info.dart';
 
 import 'mushrooms/mushrooms.dart';
+import 'plants/plants.dart';
 import 'widgets/red_book_screen_item.dart';
 
 class RedBookScreen extends StatelessWidget {
@@ -22,6 +23,11 @@ class RedBookScreen extends StatelessWidget {
           RedBookScreenItem(
             text: 'Гриюы',
             navigate: MushroomsScreen(),
+          ),
+          SizedBox(height: 60),
+          RedBookScreenItem(
+            text: 'Высшие растения',
+            navigate: PlantsScreen(),
           ),
         ],
       ),

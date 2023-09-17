@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
+import 'package:nature_of_kyrgyzstan/components/app_text.dart';
 
 class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
-  const AppBarWidget({super.key});
+  const AppBarWidget({this.name, super.key});
+
+  final String? name;
 
   @override
   State<AppBarWidget> createState() => _AppBarWidgetState();
@@ -18,6 +21,11 @@ class _AppBarWidgetState extends State<AppBarWidget> {
       foregroundColor: AppColors.appBarForegruoundColor,
       backgroundColor: AppColors.appBarBackgroundColor,
       elevation: 0,
+      title: Text(
+        widget.name ?? '',
+        style: AppText.redBookTitleText,
+      ),
+      centerTitle: true,
     );
   }
 }

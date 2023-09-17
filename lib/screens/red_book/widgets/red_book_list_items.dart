@@ -14,12 +14,14 @@ class RedBookListItems extends StatelessWidget {
     required this.navigate,
     required this.name,
     required this.nameLat,
+    required this.hero,
   });
 
   final String image;
   final DocumentSnapshot navigate;
   final String name;
   final String nameLat;
+  final String hero;
 
   @override
   Widget build(BuildContext context) {
@@ -35,18 +37,24 @@ class RedBookListItems extends StatelessWidget {
         height: 130,
         width: double.infinity,
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: CachedNetworkImage(
                 imageUrl: image,
-                imageBuilder: (context, imageProvider) => Container(
-                  height: 110,
-                  width: 110,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    image:
-                        DecorationImage(fit: BoxFit.fill, image: imageProvider),
+                imageBuilder: (context, imageProvider) => Hero(
+                  tag: hero,
+                  child: Container(
+                    height: 110,
+                    width: 110,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: imageProvider,
+                      ),
+                    ),
                   ),
                 ),
                 placeholder: (context, url) => const Center(
@@ -80,11 +88,7 @@ class RedBookListItems extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  const Divider(
-                    height: 5,
-                    color: Color(0xff658282),
-                  ),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),

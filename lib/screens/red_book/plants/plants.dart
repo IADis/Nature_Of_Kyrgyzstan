@@ -5,18 +5,18 @@ import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
 
 import '../widgets/red_book_list_items.dart';
 
-class MushroomsScreen extends StatefulWidget {
-  const MushroomsScreen({super.key});
+class PlantsScreen extends StatefulWidget {
+  const PlantsScreen({super.key});
 
   @override
-  State<MushroomsScreen> createState() => _LakesScreenState();
+  State<PlantsScreen> createState() => _LakesScreenState();
 }
 
-class _LakesScreenState extends State<MushroomsScreen> {
+class _LakesScreenState extends State<PlantsScreen> {
   @override
   Widget build(BuildContext context) {
-    Stream<QuerySnapshot> mushrooms = FirebaseFirestore.instance
-        .collection('redBookMushrooms')
+    Stream<QuerySnapshot> plants = FirebaseFirestore.instance
+        .collection('redBookPlants')
         .orderBy(
           'name',
         )
@@ -25,10 +25,10 @@ class _LakesScreenState extends State<MushroomsScreen> {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
       appBar: const AppBarWidget(
-        name: 'Грибы',
+        name: 'Высшие Растения',
       ),
       body: StreamBuilder<QuerySnapshot>(
-        stream: mushrooms,
+        stream: plants,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
             return const Text('Error');
