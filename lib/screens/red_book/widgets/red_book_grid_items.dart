@@ -1,10 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../../components/app_colors.dart';
-import '../plants/plants_detail_screen.dart';
 
 class RedBookGridItems extends StatelessWidget {
   const RedBookGridItems({
@@ -17,7 +14,7 @@ class RedBookGridItems extends StatelessWidget {
   });
 
   final String image;
-  final DocumentSnapshot navigate;
+  final Widget navigate;
   final String name;
   final String nameLat;
   final String heroGridImage;
@@ -32,7 +29,7 @@ class RedBookGridItems extends StatelessWidget {
             fullscreenDialog: true,
             pageBuilder: (BuildContext context, Animation<double> animation,
                 Animation<double> secondaryAnimation) {
-              return PlantsDetailScreen(documentSnapshot: navigate);
+              return navigate;
             },
             transitionDuration: const Duration(
               seconds: 1,

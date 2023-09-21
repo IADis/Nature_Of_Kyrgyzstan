@@ -4,6 +4,7 @@ import '../../widgets/smooth_page.dart';
 class SliverAppBarLarge extends StatelessWidget {
   const SliverAppBarLarge({
     super.key,
+    required this.count,
     required this.name,
     required this.controller,
     required this.images,
@@ -12,6 +13,7 @@ class SliverAppBarLarge extends StatelessWidget {
   final String name;
   final PageController controller;
   final List<Widget> images;
+  final int count;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,10 @@ class SliverAppBarLarge extends StatelessWidget {
             Positioned(
               top: 450,
               right: 140,
-              child: SmoothIndicatorWidget(controller: controller, count: 5),
+              child: SmoothIndicatorWidget(
+                controller: controller,
+                count: count,
+              ),
             ),
           ],
         ),

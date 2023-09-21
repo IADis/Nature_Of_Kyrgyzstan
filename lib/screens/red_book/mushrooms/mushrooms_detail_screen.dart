@@ -49,6 +49,7 @@ class _LakesDetailScreenState extends State<MushroomsDetailScreen> {
           SliverAppBarLarge(
             name: data['name'],
             controller: _pageController,
+            count: 5,
             images: [
               RedBookPageViewImages(
                 image: data['image'],

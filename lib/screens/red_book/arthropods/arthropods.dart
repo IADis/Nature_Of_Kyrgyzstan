@@ -2,29 +2,29 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/components/app_text.dart';
-import 'package:nature_of_kyrgyzstan/screens/red_book/plants/plants_detail_screen.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/widgets/red_book_grid_items.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../widgets/red_book_list_items.dart';
+import 'arthropods_detail_screen.dart';
 
-class PlantsScreen extends StatefulWidget {
-  const PlantsScreen({super.key});
+class ArthropodsScreen extends StatefulWidget {
+  const ArthropodsScreen({super.key});
 
   @override
-  State<PlantsScreen> createState() => _LakesScreenState();
+  State<ArthropodsScreen> createState() => _LakesScreenState();
 }
 
-class _LakesScreenState extends State<PlantsScreen> {
-  bool switchList = true;
+class _LakesScreenState extends State<ArthropodsScreen> {
+  bool _switchList = true;
 
   late final SharedPreferences prefs;
 
   void saveBool() async {
     setState(() {
-      switchList = !switchList;
+      _switchList = !_switchList;
     });
-    await prefs.setBool('save', switchList);
+    await prefs.setBool('save', _switchList);
   }
 
   @override
@@ -35,14 +35,14 @@ class _LakesScreenState extends State<PlantsScreen> {
 
   void initializePreference() async {
     prefs = await SharedPreferences.getInstance();
-    switchList = prefs.getBool('save') ?? false;
+    _switchList = prefs.getBool('save') ?? false;
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    Stream<QuerySnapshot> plants = FirebaseFirestore.instance
-        .collection('redBookPlants')
+    Stream<QuerySnapshot> arthropods = FirebaseFirestore.instance
+        .collection('redBookArthropods')
         .orderBy(
           'name',
         )
@@ -53,7 +53,7 @@ class _LakesScreenState extends State<PlantsScreen> {
         backgroundColor: AppColors.scaffoldBackgroundColor,
         foregroundColor: AppColors.appBarForegruoundColor,
         title: Text(
-          'Высшие Растения',
+          'Членистоногие',
           style: AppText.redBookTitleText,
         ),
         centerTitle: true,
@@ -62,14 +62,14 @@ class _LakesScreenState extends State<PlantsScreen> {
               onPressed: () {
                 saveBool();
               },
-              icon: switchList
+              icon: _switchList
                   ? const Icon(Icons.grid_view_rounded)
                   : const Icon(Icons.view_list_sharp)),
         ],
       ),
       backgroundColor: AppColors.scaffoldBackgroundColor,
       body: StreamBuilder<QuerySnapshot>(
-        stream: plants,
+        stream: arthropods,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
             return const Text('Error');
@@ -80,7 +80,7 @@ class _LakesScreenState extends State<PlantsScreen> {
             );
           }
 
-          return switchList
+          return _switchList
               ? ListView.separated(
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
@@ -91,7 +91,7 @@ class _LakesScreenState extends State<PlantsScreen> {
                     final data = snapshot.data!.docs[index];
                     return RedBookListItems(
                       image: data['image'],
-                      navigate: PlantsDetailScreen(documentSnapshot: data),
+                      navigate: ArthropodsDetailScreen(documentSnapshot: data),
                       name: data['name'],
                       nameLat: data['nameLat'],
                       heroImage: data['image'],
@@ -112,7 +112,7 @@ class _LakesScreenState extends State<PlantsScreen> {
                     final data = snapshot.data!.docs[index];
                     return RedBookGridItems(
                       image: data['image'],
-                      navigate: PlantsDetailScreen(documentSnapshot: data),
+                      navigate: ArthropodsDetailScreen(documentSnapshot: data),
                       name: data['name'],
                       nameLat: data['nameLat'],
                       heroGridImage: data['image'],

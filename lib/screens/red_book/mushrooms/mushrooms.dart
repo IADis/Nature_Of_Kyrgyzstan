@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
+import 'package:nature_of_kyrgyzstan/screens/red_book/mushrooms/mushrooms_detail_screen.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
 
 import '../widgets/red_book_list_items.dart';
@@ -50,7 +51,7 @@ class _LakesScreenState extends State<MushroomsScreen> {
                   image: data['image'],
                   name: data['name'],
                   nameLat: data['nameLat'],
-                  navigate: data,
+                  navigate: MushroomsDetailScreen(documentSnapshot: data),
                   heroImage: data['image'],
                 );
               },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nature_of_kyrgyzstan/screens/red_book/arthropods/arthropods.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/red_book_info/red_book_info.dart';
 
 import 'mushrooms/mushrooms.dart';
@@ -21,13 +22,18 @@ class RedBookScreen extends StatelessWidget {
           ),
           SizedBox(height: 60),
           RedBookScreenItem(
-            text: 'Гриюы',
+            text: 'Грибы',
             navigate: MushroomsScreen(),
           ),
           SizedBox(height: 60),
           RedBookScreenItem(
             text: 'Высшие растения',
             navigate: PlantsScreen(),
+          ),
+          SizedBox(height: 60),
+          RedBookScreenItem(
+            text: 'Членостоногие',
+            navigate: ArthropodsScreen(),
           ),
         ],
       ),

@@ -1,10 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
-import 'package:nature_of_kyrgyzstan/screens/red_book/plants/plants_detail_screen.dart';
 
 class RedBookListItems extends StatelessWidget {
   const RedBookListItems({
@@ -17,7 +14,7 @@ class RedBookListItems extends StatelessWidget {
   });
 
   final String image;
-  final DocumentSnapshot navigate;
+  final Widget navigate;
   final String name;
   final String nameLat;
   final String heroImage;
@@ -31,7 +28,7 @@ class RedBookListItems extends StatelessWidget {
           fullscreenDialog: true,
           pageBuilder: (BuildContext context, Animation<double> animation,
               Animation<double> secondaryAnimation) {
-            return PlantsDetailScreen(documentSnapshot: navigate);
+            return navigate;
           },
           transitionDuration: const Duration(
             seconds: 1,
