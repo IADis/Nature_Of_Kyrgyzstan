@@ -22,7 +22,7 @@ class SliverAppBarLarge extends StatelessWidget {
       foregroundColor: const Color(0xffF1962C),
       backgroundColor: const Color(0xffFFFFFF),
       elevation: 0,
-      expandedHeight: 330,
+      expandedHeight: 450,
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.pin,
         background: Stack(
@@ -32,26 +32,26 @@ class SliverAppBarLarge extends StatelessWidget {
               children: images,
             ),
             Positioned(
-              top: 310,
+              top: 450,
               right: 140,
               child: SmoothIndicatorWidget(controller: controller, count: 5),
             ),
           ],
         ),
       ),
-      bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(0.0),
-        child: Container(
-          height: 22,
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
-            ),
-          ),
-        ),
-      ),
+      // bottom: PreferredSize(
+      //   preferredSize: const Size.fromHeight(0.0),
+      //   child: Container(
+      //     height: 22,
+      //     decoration: const BoxDecoration(
+      //       color: Colors.white,
+      //       borderRadius: BorderRadius.only(
+      //         topLeft: Radius.circular(20),
+      //         topRight: Radius.circular(20),
+      //       ),
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

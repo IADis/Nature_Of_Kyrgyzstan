@@ -22,7 +22,6 @@ class SliverListWidget extends StatelessWidget {
     required this.color,
     required this.status,
     required this.colorStatus,
-    required this.hero,
   });
 
   final String name;
@@ -40,7 +39,6 @@ class SliverListWidget extends StatelessWidget {
   final Color color;
   final String status;
   final Color colorStatus;
-  final String hero;
 
   @override
   Widget build(BuildContext context) {
@@ -54,12 +52,9 @@ class SliverListWidget extends StatelessWidget {
         delegate: SliverChildListDelegate(
           [
             const SizedBox(height: 10),
-            Hero(
-              tag: hero,
-              child: Text(
-                name,
-                style: AppText.redBookTitleText,
-              ),
+            Text(
+              name,
+              style: AppText.redBookTitleText,
             ),
             const SizedBox(height: 5),
             Text(

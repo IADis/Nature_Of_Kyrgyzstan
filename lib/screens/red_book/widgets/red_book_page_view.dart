@@ -3,23 +3,50 @@ import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 
 class RedBookPageViewImages extends StatelessWidget {
-  const RedBookPageViewImages({super.key, required this.image});
+  const RedBookPageViewImages({this.data, super.key, required this.image});
 
   final String image;
+  final String? data;
 
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       imageUrl: image,
-      imageBuilder: (context, imageProvider) => Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.2),
-              BlendMode.darken,
+      imageBuilder: (context, imageProvider) => Hero(
+        tag: data ?? '',
+        transitionOnUserGestures: true,
+        flightShuttleBuilder: (flightContext, animation, flightDirection,
+            fromHeroContext, toHeroContext) {
+          switch (flightDirection) {
+            case HeroFlightDirection.push:
+              return ScaleTransition(
+                scale: animation.drive(
+                  Tween<double>(begin: 0.0, end: 1.0).chain(
+                    CurveTween(
+                      curve: Curves.easeInToLinear,
+                    ),
+                  ),
+                ),
+                child: toHeroContext.widget,
+              );
+            case HeroFlightDirection.pop:
+              return toHeroContext.widget;
+          }
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.only(
+              bottomLeft: Radius.circular(15),
+              bottomRight: Radius.circular(15),
             ),
-            fit: BoxFit.cover,
-            image: imageProvider,
+            image: DecorationImage(
+              colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.2),
+                BlendMode.darken,
+              ),
+              fit: BoxFit.cover,
+              image: imageProvider,
+            ),
           ),
         ),
       ),

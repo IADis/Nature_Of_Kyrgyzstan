@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
-
-import '../mushrooms/mushrooms_detail_screen.dart';
+import 'package:nature_of_kyrgyzstan/screens/red_book/plants/plants_detail_screen.dart';
 
 class RedBookListItems extends StatelessWidget {
   const RedBookListItems({
@@ -14,37 +13,55 @@ class RedBookListItems extends StatelessWidget {
     required this.navigate,
     required this.name,
     required this.nameLat,
-    required this.hero,
+    required this.heroImage,
   });
 
   final String image;
   final DocumentSnapshot navigate;
   final String name;
   final String nameLat;
-  final String hero;
+  final String heroImage;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.push(
         context,
-        MaterialPageRoute(
-          builder: (context) =>
-              MushroomsDetailScreen(documentSnapshot: navigate),
+        PageRouteBuilder(
+          fullscreenDialog: true,
+          pageBuilder: (BuildContext context, Animation<double> animation,
+              Animation<double> secondaryAnimation) {
+            return PlantsDetailScreen(documentSnapshot: navigate);
+          },
+          transitionDuration: const Duration(
+            seconds: 1,
+          ),
+          transitionsBuilder: (BuildContext context,
+              Animation<double> animation,
+              Animation<double> secondaryAnimation,
+              Widget child) {
+            return Align(
+              child: FadeTransition(
+                opacity: animation,
+                child: child,
+              ),
+            );
+          },
         ),
       ),
       child: SizedBox(
         height: 130,
         width: double.infinity,
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: CachedNetworkImage(
                 imageUrl: image,
                 imageBuilder: (context, imageProvider) => Hero(
-                  tag: hero,
+                  tag: heroImage,
                   child: Container(
                     height: 110,
                     width: 110,

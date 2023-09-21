@@ -50,17 +50,18 @@ class _LakesDetailScreenState extends State<PlantsDetailScreen> {
             name: data['name'],
             controller: _pageController,
             images: [
+              RedBookPageViewImages(image: data['image'], data: data['image']),
               RedBookPageViewImages(
-                image: data['image'],
-              ),
-              RedBookPageViewImages(image: data['pageViewImage1']),
-              RedBookPageViewImages(image: data['pageViewImage2']),
-              RedBookPageViewImages(image: data['pageViewImage3']),
-              RedBookPageViewImages(image: data['pageViewImage4']),
+                  image: data['pageViewImage1'], data: data['image']),
+              RedBookPageViewImages(
+                  image: data['pageViewImage2'], data: data['image']),
+              RedBookPageViewImages(
+                  image: data['pageViewImage3'], data: data['image']),
+              RedBookPageViewImages(
+                  image: data['pageViewImage4'], data: data['image']),
             ],
           ),
           SliverListWidget(
-            hero: data['image'],
             color: Color(int.tryParse(data['color'])!.toInt()),
             colorStatus: Color(int.tryParse(data['colorStatus'])!.toInt()),
             status: data['status'],

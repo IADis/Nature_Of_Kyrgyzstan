@@ -51,7 +51,7 @@ class _LakesScreenState extends State<MushroomsScreen> {
                   name: data['name'],
                   nameLat: data['nameLat'],
                   navigate: data,
-                  hero: data['image'],
+                  heroImage: data['image'],
                 );
               },
             );

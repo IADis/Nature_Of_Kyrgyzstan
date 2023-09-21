@@ -60,7 +60,6 @@ class _LakesDetailScreenState extends State<MushroomsDetailScreen> {
             ],
           ),
           SliverListWidget(
-            hero: data['image'],
             color: Color(int.tryParse(data['color'])!.toInt()),
             colorStatus: Color(int.tryParse(data['colorStatus'])!.toInt()),
             status: data['status'],
