@@ -51,6 +51,8 @@ class RedBookGridItems extends StatelessWidget {
           ),
         ),
         child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CachedNetworkImage(
@@ -67,8 +69,12 @@ class RedBookGridItems extends StatelessWidget {
                 ),
               ),
               placeholder: (context, url) => const Center(
-                child: CircularProgressIndicator(
-                  color: AppColors.activeColors,
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 170,
+                  child: CircularProgressIndicator(
+                    color: AppColors.activeColors,
+                  ),
                 ),
               ),
               errorWidget: (context, url, error) => const Icon(Icons.error),

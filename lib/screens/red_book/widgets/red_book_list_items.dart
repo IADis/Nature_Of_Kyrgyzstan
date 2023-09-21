@@ -75,8 +75,12 @@ class RedBookListItems extends StatelessWidget {
                   ),
                 ),
                 placeholder: (context, url) => const Center(
-                  child: CircularProgressIndicator(
-                    color: AppColors.activeColors,
+                  child: SizedBox(
+                    height: 110,
+                    width: 110,
+                    child: CircularProgressIndicator(
+                      color: AppColors.activeColors,
+                    ),
                   ),
                 ),
                 errorWidget: (context, url, error) => const Icon(Icons.error),

@@ -79,63 +79,45 @@ class _LakesScreenState extends State<PlantsScreen> {
             );
           }
 
-          if (snapshot.hasData) {
-            return CustomScrollView(
-              slivers: [
-                switchList
-                    ? SliverPadding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 10,
-                          horizontal: 15,
-                        ),
-                        sliver: SliverList.separated(
-                          itemCount: snapshot.data!.docs.length,
-                          itemBuilder: (context, index) {
-                            final data = snapshot.data!.docs[index];
-                            return RedBookListItems(
-                              image: data['image'],
-                              navigate: data,
-                              name: data['name'],
-                              nameLat: data['nameLat'],
-                              heroImage: data['image'],
-                            );
-                          },
-                          separatorBuilder: (context, index) =>
-                              const SizedBox(height: 20),
-                        ),
-                      )
-                    : SliverPadding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 10,
-                          horizontal: 15,
-                        ),
-                        sliver: SliverGrid(
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 15,
-                            mainAxisSpacing: 20,
-                            mainAxisExtent: 270,
-                          ),
-                          delegate: SliverChildBuilderDelegate(
-                            childCount: snapshot.data!.docs.length,
-                            (context, index) {
-                              final gridData = snapshot.data!.docs[index];
-                              return RedBookGridItems(
-                                image: gridData['image'],
-                                navigate: gridData,
-                                name: gridData['name'],
-                                nameLat: gridData['nameLat'],
-                                heroGridImage: gridData['image'],
-                              );
-                            },
-                          ),
-                        ),
-                      ),
-              ],
-            );
-          }
-          return const SizedBox.shrink();
+          return switchList
+              ? ListView.separated(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  itemCount: snapshot.data!.docs.length,
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(height: 20),
+                  itemBuilder: (context, index) {
+                    final data = snapshot.data!.docs[index];
+                    return RedBookListItems(
+                      image: data['image'],
+                      navigate: data,
+                      name: data['name'],
+                      nameLat: data['nameLat'],
+                      heroImage: data['image'],
+                    );
+                  },
+                )
+              : GridView.builder(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                  itemCount: snapshot.data!.docs.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 20,
+                    mainAxisExtent: 270,
+                  ),
+                  itemBuilder: (context, index) {
+                    final data = snapshot.data!.docs[index];
+                    return RedBookGridItems(
+                      image: data['image'],
+                      navigate: data,
+                      name: data['name'],
+                      nameLat: data['nameLat'],
+                      heroGridImage: data['image'],
+                    );
+                  },
+                );
         },
       ),
     );
