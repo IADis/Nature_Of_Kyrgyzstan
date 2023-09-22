@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../components/app_colors.dart';
 import '../../../../components/app_text.dart';
 
-class DetailScreenItems extends StatelessWidget {
-  const DetailScreenItems({
+class ReptilesDetailScreenItems extends StatelessWidget {
+  const ReptilesDetailScreenItems({
     super.key,
     required this.name,
     required this.nameLat,
@@ -13,7 +13,6 @@ class DetailScreenItems extends StatelessWidget {
     required this.color,
     required this.colorStatus,
     required this.statusBody,
-    required this.descriptionBody,
     required this.distributionBody,
     required this.habitatBody,
     required this.numberBody,
@@ -30,7 +29,7 @@ class DetailScreenItems extends StatelessWidget {
   final Color color;
   final Color colorStatus;
   final String statusBody;
-  final String descriptionBody;
+
   final String distributionBody;
   final String habitatBody;
   final String numberBody;
@@ -62,7 +61,7 @@ class DetailScreenItems extends StatelessWidget {
               nameLat,
               style: GoogleFonts.raleway(
                 fontSize: 18,
-                color: AppColors.arthropodsColors,
+                color: AppColors.reptilesColors,
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -99,16 +98,6 @@ class DetailScreenItems extends StatelessWidget {
             const SizedBox(height: 7),
             Text(
               statusBody,
-              style: AppText.redBookBodyText,
-            ),
-            const SizedBox(height: 25),
-            Text(
-              'Описание',
-              style: AppText.redBookTitleText,
-            ),
-            const SizedBox(height: 5),
-            Text(
-              descriptionBody,
               style: AppText.redBookBodyText,
             ),
             const SizedBox(height: 25),

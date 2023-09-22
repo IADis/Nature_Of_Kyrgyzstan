@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import '../widgets/red_book_page_view.dart';
 import '../widgets/sliver_app_bar_large.dart';
-import 'widgets/arthropods_detail_screen_items.dart';
+import 'widgets/reptiles_detail_screen_items.dart';
 
-class ArthropodsDetailScreen extends StatefulWidget {
-  const ArthropodsDetailScreen({
+class ReptilesDetailScreen extends StatefulWidget {
+  const ReptilesDetailScreen({
     super.key,
     required this.documentSnapshot,
   });
@@ -14,10 +14,10 @@ class ArthropodsDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<ArthropodsDetailScreen> createState() => _LakesDetailScreenState();
+  State<ReptilesDetailScreen> createState() => _LakesDetailScreenState();
 }
 
-class _LakesDetailScreenState extends State<ArthropodsDetailScreen> {
+class _LakesDetailScreenState extends State<ReptilesDetailScreen> {
   PageController _pageController = PageController();
   double pageOffset = 0;
 
@@ -50,27 +50,27 @@ class _LakesDetailScreenState extends State<ArthropodsDetailScreen> {
           SliverAppBarLarge(
             name: data['name'],
             controller: _pageController,
-            count: 3,
-            color: AppColors.arthropodsColors,
+            count: 5,
+            color: AppColors.reptilesColors,
             images: [
               RedBookPageViewImages(image: data['image'], data: data['image']),
               RedBookPageViewImages(
                   image: data['pageViewImage1'], data: data['image']),
               RedBookPageViewImages(
                   image: data['pageViewImage2'], data: data['image']),
+              RedBookPageViewImages(
+                  image: data['pageViewImage3'], data: data['image']),
+              RedBookPageViewImages(
+                  image: data['pageViewImage4'], data: data['image']),
             ],
           ),
-          ArthropodsDetailScreenItems(
+          ReptilesDetailScreenItems(
             name: data['name'],
             nameLat: data['nameLat'],
             status: data['status'],
             color: Color(int.tryParse(data['color'])!.toInt()),
             colorStatus: Color(int.tryParse(data['colorStatus'])!.toInt()),
             statusBody: data['statusBody'].toString().replaceAll(
-                  RegExp(r'\[\d+(,\s*\d+)?\]'),
-                  '',
-                ),
-            descriptionBody: data['descriptionBody'].toString().replaceAll(
                   RegExp(r'\[\d+(,\s*\d+)?\]'),
                   '',
                 ),

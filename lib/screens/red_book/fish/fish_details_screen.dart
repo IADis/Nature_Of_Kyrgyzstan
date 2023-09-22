@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
+import 'package:nature_of_kyrgyzstan/screens/red_book/fish/widgets/fish_detail_screen_items.dart';
 import '../widgets/red_book_page_view.dart';
 import '../widgets/sliver_app_bar_large.dart';
-import 'widgets/arthropods_detail_screen_items.dart';
 
-class ArthropodsDetailScreen extends StatefulWidget {
-  const ArthropodsDetailScreen({
+class FishDetailScreen extends StatefulWidget {
+  const FishDetailScreen({
     super.key,
     required this.documentSnapshot,
   });
@@ -14,10 +14,10 @@ class ArthropodsDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<ArthropodsDetailScreen> createState() => _LakesDetailScreenState();
+  State<FishDetailScreen> createState() => _LakesDetailScreenState();
 }
 
-class _LakesDetailScreenState extends State<ArthropodsDetailScreen> {
+class _LakesDetailScreenState extends State<FishDetailScreen> {
   PageController _pageController = PageController();
   double pageOffset = 0;
 
@@ -51,7 +51,7 @@ class _LakesDetailScreenState extends State<ArthropodsDetailScreen> {
             name: data['name'],
             controller: _pageController,
             count: 3,
-            color: AppColors.arthropodsColors,
+            color: AppColors.fishColors,
             images: [
               RedBookPageViewImages(image: data['image'], data: data['image']),
               RedBookPageViewImages(
@@ -60,7 +60,7 @@ class _LakesDetailScreenState extends State<ArthropodsDetailScreen> {
                   image: data['pageViewImage2'], data: data['image']),
             ],
           ),
-          ArthropodsDetailScreenItems(
+          FishDetailScreenItems(
             name: data['name'],
             nameLat: data['nameLat'],
             status: data['status'],
