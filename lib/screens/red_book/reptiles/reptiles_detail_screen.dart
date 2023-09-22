@@ -53,15 +53,31 @@ class _LakesDetailScreenState extends State<ReptilesDetailScreen> {
             count: 5,
             color: AppColors.reptilesColors,
             images: [
-              RedBookPageViewImages(image: data['image'], data: data['image']),
               RedBookPageViewImages(
-                  image: data['pageViewImage1'], data: data['image']),
+                image: data['image'],
+                data: data['image'],
+                pageViewCircularColor: AppColors.reptilesColors,
+              ),
               RedBookPageViewImages(
-                  image: data['pageViewImage2'], data: data['image']),
+                image: data['pageViewImage1'],
+                data: data['image'],
+                pageViewCircularColor: AppColors.reptilesColors,
+              ),
               RedBookPageViewImages(
-                  image: data['pageViewImage3'], data: data['image']),
+                image: data['pageViewImage2'],
+                data: data['image'],
+                pageViewCircularColor: AppColors.reptilesColors,
+              ),
               RedBookPageViewImages(
-                  image: data['pageViewImage4'], data: data['image']),
+                image: data['pageViewImage3'],
+                data: data['image'],
+                pageViewCircularColor: AppColors.reptilesColors,
+              ),
+              RedBookPageViewImages(
+                image: data['pageViewImage4'],
+                data: data['image'],
+                pageViewCircularColor: AppColors.reptilesColors,
+              ),
             ],
           ),
           ReptilesDetailScreenItems(

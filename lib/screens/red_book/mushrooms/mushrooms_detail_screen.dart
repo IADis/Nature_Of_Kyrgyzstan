@@ -54,12 +54,30 @@ class _LakesDetailScreenState extends State<MushroomsDetailScreen> {
             color: AppColors.plantsColors,
             images: [
               RedBookPageViewImages(
+                data: data['image'],
                 image: data['image'],
+                pageViewCircularColor: AppColors.plantsColors,
               ),
-              RedBookPageViewImages(image: data['pageViewImage1']),
-              RedBookPageViewImages(image: data['pageViewImage2']),
-              RedBookPageViewImages(image: data['pageViewImage3']),
-              RedBookPageViewImages(image: data['pageViewImage4']),
+              RedBookPageViewImages(
+                data: data['image'],
+                image: data['pageViewImage1'],
+                pageViewCircularColor: AppColors.plantsColors,
+              ),
+              RedBookPageViewImages(
+                data: data['image'],
+                image: data['pageViewImage2'],
+                pageViewCircularColor: AppColors.plantsColors,
+              ),
+              RedBookPageViewImages(
+                data: data['image'],
+                image: data['pageViewImage3'],
+                pageViewCircularColor: AppColors.plantsColors,
+              ),
+              RedBookPageViewImages(
+                data: data['image'],
+                image: data['pageViewImage4'],
+                pageViewCircularColor: AppColors.plantsColors,
+              ),
             ],
           ),
           SliverListWidget(

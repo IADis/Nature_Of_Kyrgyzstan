@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 
 class RedBookPageViewImages extends StatelessWidget {
-  const RedBookPageViewImages({this.data, super.key, required this.image});
+  const RedBookPageViewImages({
+    this.data,
+    super.key,
+    required this.image,
+    required this.pageViewCircularColor,
+  });
 
   final String image;
   final String? data;
+  final Color pageViewCircularColor;
 
   @override
   Widget build(BuildContext context) {
@@ -50,9 +56,9 @@ class RedBookPageViewImages extends StatelessWidget {
           ),
         ),
       ),
-      placeholder: (context, url) => const Center(
+      placeholder: (context, url) => Center(
         child: CircularProgressIndicator(
-          color: AppColors.plantsColors,
+          color: pageViewCircularColor,
         ),
       ),
       errorWidget: (context, url, error) => const Icon(Icons.error),
