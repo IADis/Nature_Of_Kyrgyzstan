@@ -62,7 +62,7 @@ class DetailScreenItems extends StatelessWidget {
               nameLat,
               style: GoogleFonts.raleway(
                 fontSize: 18,
-                color: AppColors.activeColors,
+                color: AppColors.arthropodsColors,
                 fontWeight: FontWeight.w700,
               ),
             ),

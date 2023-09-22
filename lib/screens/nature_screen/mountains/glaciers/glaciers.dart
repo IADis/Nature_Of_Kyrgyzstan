@@ -71,7 +71,11 @@ class _GlaciersScreenState extends State<GlaciersScreen> {
                     ],
                   ),
                 ),
-                SmoothIndicatorWidget(controller: _controller, count: 9),
+                SmoothIndicatorWidget(
+                  controller: _controller,
+                  count: 9,
+                  color: AppColors.plantsColors,
+                ),
                 const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),

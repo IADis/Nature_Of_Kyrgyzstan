@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/components/app_text.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/rivers/widgets/data_table_rivers_widget.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/smooth_page.dart';
@@ -49,7 +50,11 @@ class _RiversListState extends State<RiversList> {
             children: widget.pageViewImages,
           ),
         ),
-        SmoothIndicatorWidget(controller: _controller, count: 10),
+        SmoothIndicatorWidget(
+          controller: _controller,
+          count: 10,
+          color: AppColors.plantsColors,
+        ),
         const SizedBox(height: 20),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),

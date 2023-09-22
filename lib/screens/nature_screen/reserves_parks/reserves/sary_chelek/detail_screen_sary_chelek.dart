@@ -58,6 +58,7 @@ class _AlaArchaDetailScreenState extends State<SaryChelekDetailScreen> {
             child: SmoothIndicatorWidget(
               controller: _controller,
               count: 10,
+              color: AppColors.plantsColors,
             ),
           ),
           const SliverToBoxAdapter(

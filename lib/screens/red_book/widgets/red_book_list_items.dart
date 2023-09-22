@@ -11,6 +11,8 @@ class RedBookListItems extends StatelessWidget {
     required this.name,
     required this.nameLat,
     required this.heroImage,
+    required this.colorNameLat,
+    required this.circularColor,
   });
 
   final String image;
@@ -18,6 +20,8 @@ class RedBookListItems extends StatelessWidget {
   final String name;
   final String nameLat;
   final String heroImage;
+  final Color colorNameLat;
+  final Color circularColor;
 
   @override
   Widget build(BuildContext context) {
@@ -71,12 +75,12 @@ class RedBookListItems extends StatelessWidget {
                     ),
                   ),
                 ),
-                placeholder: (context, url) => const Center(
+                placeholder: (context, url) => Center(
                   child: SizedBox(
                     height: 110,
                     width: 110,
                     child: CircularProgressIndicator(
-                      color: AppColors.activeColors,
+                      color: circularColor,
                     ),
                   ),
                 ),
@@ -102,7 +106,7 @@ class RedBookListItems extends StatelessWidget {
                     nameLat,
                     style: GoogleFonts.raleway(
                       fontSize: 16,
-                      color: AppColors.activeColors,
+                      color: colorNameLat,
                       fontWeight: FontWeight.w700,
                     ),
                   ),

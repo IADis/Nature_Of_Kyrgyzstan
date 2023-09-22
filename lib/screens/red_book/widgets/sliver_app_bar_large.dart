@@ -8,12 +8,14 @@ class SliverAppBarLarge extends StatelessWidget {
     required this.name,
     required this.controller,
     required this.images,
+    required this.color,
   });
 
   final String name;
   final PageController controller;
   final List<Widget> images;
   final int count;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +41,7 @@ class SliverAppBarLarge extends StatelessWidget {
               child: SmoothIndicatorWidget(
                 controller: controller,
                 count: count,
+                color: color,
               ),
             ),
           ],

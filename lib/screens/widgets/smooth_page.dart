@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SmoothIndicatorWidget extends StatelessWidget {
@@ -7,10 +6,12 @@ class SmoothIndicatorWidget extends StatelessWidget {
     super.key,
     required this.controller,
     required this.count,
+    required this.color,
   });
 
   final PageController controller;
   final int count;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +19,11 @@ class SmoothIndicatorWidget extends StatelessWidget {
       child: SmoothPageIndicator(
         controller: controller,
         count: count,
-        effect: const JumpingDotEffect(
+        effect: JumpingDotEffect(
           dotHeight: 13,
           dotWidth: 13,
-          dotColor: Color(0xffC7C7CC),
-          activeDotColor: AppColors.activeColors,
+          dotColor: const Color(0xffC7C7CC),
+          activeDotColor: color,
         ),
       ),
     );

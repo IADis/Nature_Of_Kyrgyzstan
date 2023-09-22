@@ -94,7 +94,9 @@ class _LakesScreenState extends State<ArthropodsScreen> {
                       navigate: ArthropodsDetailScreen(documentSnapshot: data),
                       name: data['name'],
                       nameLat: data['nameLat'],
+                      colorNameLat: AppColors.arthropodsColors,
                       heroImage: data['image'],
+                      circularColor: AppColors.arthropodsColors,
                     );
                   },
                 )
@@ -115,7 +117,9 @@ class _LakesScreenState extends State<ArthropodsScreen> {
                       navigate: ArthropodsDetailScreen(documentSnapshot: data),
                       name: data['name'],
                       nameLat: data['nameLat'],
+                      colorNameLat: AppColors.arthropodsColors,
                       heroGridImage: data['image'],
+                      circularColor: AppColors.arthropodsColors,
                     );
                   },
                 );

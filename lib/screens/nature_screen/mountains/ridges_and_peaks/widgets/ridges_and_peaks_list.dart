@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_text.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/smooth_page.dart';
 
+import '../../../../../components/app_colors.dart';
 import 'data_table_ridges_and_peaks.widget.dart';
 
 class RidgesAndPeaksList extends StatelessWidget {
@@ -51,7 +52,11 @@ class RidgesAndPeaksList extends StatelessWidget {
           height: 400,
           child: PageView(controller: controller, children: pageViewImage),
         ),
-        SmoothIndicatorWidget(controller: controller, count: 15),
+        SmoothIndicatorWidget(
+          controller: controller,
+          count: 15,
+          color: AppColors.plantsColors,
+        ),
         const SizedBox(height: 20),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),

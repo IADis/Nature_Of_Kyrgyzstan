@@ -3,6 +3,8 @@ import 'package:nature_of_kyrgyzstan/components/app_text.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/reservoir/widgets/data_table_reservoirs_widget.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/smooth_page.dart';
 
+import '../../../../../components/app_colors.dart';
+
 class ReservoirsList extends StatelessWidget {
   const ReservoirsList({
     super.key,
@@ -41,6 +43,7 @@ class ReservoirsList extends StatelessWidget {
         SmoothIndicatorWidget(
           controller: controller,
           count: 9,
+          color: AppColors.plantsColors,
         ),
         const SizedBox(height: 20),
         Padding(

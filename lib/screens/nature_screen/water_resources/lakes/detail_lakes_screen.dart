@@ -68,6 +68,7 @@ class _LakesDetailScreenState extends State<LakesDetailScreen> {
             child: SmoothIndicatorWidget(
               controller: _pageController,
               count: 4,
+              color: AppColors.plantsColors,
             ),
           ),
           const SliverToBoxAdapter(

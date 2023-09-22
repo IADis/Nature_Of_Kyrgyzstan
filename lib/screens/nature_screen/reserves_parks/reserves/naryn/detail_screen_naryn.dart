@@ -58,6 +58,7 @@ class _AlaArchaDetailScreenState extends State<NarynDetailScreen> {
             child: SmoothIndicatorWidget(
               controller: _controller,
               count: 10,
+              color: AppColors.plantsColors,
             ),
           ),
           const SliverToBoxAdapter(

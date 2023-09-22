@@ -53,6 +53,7 @@ class _GorgesDetailsScreenState extends State<GorgesDetailsScreen> {
             child: SmoothIndicatorWidget(
               controller: _pageController,
               count: 4,
+              color: AppColors.plantsColors,
             ),
           ),
           const SliverToBoxAdapter(

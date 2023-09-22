@@ -61,7 +61,7 @@ class SliverListWidget extends StatelessWidget {
               nameLat,
               style: GoogleFonts.raleway(
                 fontSize: 18,
-                color: AppColors.activeColors,
+                color: AppColors.plantsColors,
                 fontWeight: FontWeight.w700,
               ),
             ),

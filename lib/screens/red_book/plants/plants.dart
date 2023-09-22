@@ -94,7 +94,9 @@ class _LakesScreenState extends State<PlantsScreen> {
                       navigate: PlantsDetailScreen(documentSnapshot: data),
                       name: data['name'],
                       nameLat: data['nameLat'],
+                      colorNameLat: AppColors.plantsColors,
                       heroImage: data['image'],
+                      circularColor: AppColors.plantsColors,
                     );
                   },
                 )
@@ -115,7 +117,9 @@ class _LakesScreenState extends State<PlantsScreen> {
                       navigate: PlantsDetailScreen(documentSnapshot: data),
                       name: data['name'],
                       nameLat: data['nameLat'],
+                      colorNameLat: AppColors.plantsColors,
                       heroGridImage: data['image'],
+                      circularColor: AppColors.plantsColors,
                     );
                   },
                 );

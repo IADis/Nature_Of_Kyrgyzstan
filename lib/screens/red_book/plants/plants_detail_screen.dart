@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import '../widgets/red_book_page_view.dart';
 import '../widgets/sliver_app_bar_large.dart';
 import '../widgets/sliver_list.dart';
@@ -50,6 +51,7 @@ class _LakesDetailScreenState extends State<PlantsDetailScreen> {
             name: data['name'],
             controller: _pageController,
             count: 5,
+            color: AppColors.plantsColors,
             images: [
               RedBookPageViewImages(image: data['image'], data: data['image']),
               RedBookPageViewImages(

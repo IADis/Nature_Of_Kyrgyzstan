@@ -63,6 +63,7 @@ class _AlaArchaDetailScreenState extends State<SalkynTorDetailScreen> {
             child: SmoothIndicatorWidget(
               controller: _controller,
               count: 15,
+              color: AppColors.plantsColors,
             ),
           ),
           const SliverToBoxAdapter(

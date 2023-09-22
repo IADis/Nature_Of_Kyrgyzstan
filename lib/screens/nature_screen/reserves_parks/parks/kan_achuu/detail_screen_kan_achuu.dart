@@ -55,6 +55,7 @@ class _AlaArchaDetailScreenState extends State<KanAchuuDetailScreen> {
             child: SmoothIndicatorWidget(
               controller: _controller,
               count: 7,
+              color: AppColors.plantsColors,
             ),
           ),
           const SliverToBoxAdapter(

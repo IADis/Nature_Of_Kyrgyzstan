@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/components/app_text.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/page_view_images.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/smooth_page.dart';
@@ -234,7 +235,11 @@ class WatterfallsList extends StatelessWidget {
             children: pageViewImage,
           ),
         ),
-        SmoothIndicatorWidget(controller: controller, count: 2),
+        SmoothIndicatorWidget(
+          controller: controller,
+          count: 2,
+          color: AppColors.plantsColors,
+        ),
         const SizedBox(height: 20),
       ],
     );

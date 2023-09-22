@@ -53,6 +53,7 @@ class _CanyonsDetailScreenState extends State<CanyonsDetailScreen> {
             child: SmoothIndicatorWidget(
               controller: _controller,
               count: 6,
+              color: AppColors.plantsColors,
             ),
           ),
           const SliverToBoxAdapter(

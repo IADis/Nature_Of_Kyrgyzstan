@@ -52,7 +52,7 @@ class RedBookPageViewImages extends StatelessWidget {
       ),
       placeholder: (context, url) => const Center(
         child: CircularProgressIndicator(
-          color: AppColors.activeColors,
+          color: AppColors.plantsColors,
         ),
       ),
       errorWidget: (context, url, error) => const Icon(Icons.error),

@@ -11,6 +11,8 @@ class RedBookGridItems extends StatelessWidget {
     required this.name,
     required this.nameLat,
     required this.heroGridImage,
+    required this.colorNameLat,
+    required this.circularColor,
   });
 
   final String image;
@@ -18,6 +20,8 @@ class RedBookGridItems extends StatelessWidget {
   final String name;
   final String nameLat;
   final String heroGridImage;
+  final Color colorNameLat;
+  final Color circularColor;
 
   @override
   Widget build(BuildContext context) {
@@ -65,12 +69,12 @@ class RedBookGridItems extends StatelessWidget {
                   ),
                 ),
               ),
-              placeholder: (context, url) => const Center(
+              placeholder: (context, url) => Center(
                 child: SizedBox(
                   width: double.infinity,
                   height: 170,
                   child: CircularProgressIndicator(
-                    color: AppColors.activeColors,
+                    color: circularColor,
                   ),
                 ),
               ),
@@ -93,7 +97,7 @@ class RedBookGridItems extends StatelessWidget {
               overflow: TextOverflow.fade,
               nameLat.toString(),
               style: GoogleFonts.raleway(
-                color: AppColors.activeColors,
+                color: colorNameLat,
                 fontWeight: FontWeight.w700,
                 fontSize: 16,
               ),
