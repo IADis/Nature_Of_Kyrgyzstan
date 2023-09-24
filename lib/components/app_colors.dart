@@ -8,4 +8,5 @@ class AppColors {
   static const arthropodsColors = Color.fromRGBO(136, 8, 8, 1);
   static const fishColors = Color(0xff0096FF);
   static const reptilesColors = Color(0xff8B8000);
+  static const birdsColors = Color(0xffBF40BF);
 }

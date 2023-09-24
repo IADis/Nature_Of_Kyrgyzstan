@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/arthropods/arthropods.dart';
+import 'package:nature_of_kyrgyzstan/screens/red_book/birds/birds.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/fish/fish.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/red_book_info/red_book_info.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/reptiles/reptiles.dart';
@@ -48,6 +49,11 @@ class RedBookScreen extends StatelessWidget {
             RedBookScreenItem(
               text: 'Амфибии и Рептилии',
               navigate: ReptilesScreen(),
+            ),
+            SizedBox(height: 60),
+            RedBookScreenItem(
+              text: 'Птицы',
+              navigate: BirdsScreen(),
             ),
           ],
         ),
