@@ -52,6 +52,7 @@ class _LakesDetailScreenState extends State<PlantsDetailScreen> {
             controller: _pageController,
             count: 5,
             color: AppColors.plantsColors,
+            foregroundColor: AppColors.plantsColors,
             images: [
               RedBookPageViewImages(
                 image: data['image'],
@@ -86,6 +87,7 @@ class _LakesDetailScreenState extends State<PlantsDetailScreen> {
             status: data['status'],
             name: data['name'],
             nameLat: data['nameLat'],
+            nameLatColor: AppColors.plantsColors,
             statusBody: data['statusBody'],
             descriptionBody: data['descriptionBody'],
             featuresOfBiologyBody: data['featuresOfBiologyBody'],

@@ -52,6 +52,7 @@ class _LakesDetailScreenState extends State<ArthropodsDetailScreen> {
             controller: _pageController,
             count: 3,
             color: AppColors.arthropodsColors,
+            foregroundColor: AppColors.arthropodsColors,
             images: [
               RedBookPageViewImages(
                 image: data['image'],

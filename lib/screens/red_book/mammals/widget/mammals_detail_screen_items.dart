@@ -1,50 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nature_of_kyrgyzstan/components/app_text.dart';
 
-class SliverListWidget extends StatelessWidget {
-  const SliverListWidget({
+import '../../../../components/app_colors.dart';
+import '../../../../components/app_text.dart';
+
+class MammalsDetailScreenItems extends StatelessWidget {
+  const MammalsDetailScreenItems({
     super.key,
     required this.name,
     required this.nameLat,
+    required this.status,
+    required this.color,
+    required this.colorStatus,
     required this.statusBody,
-    required this.descriptionBody,
-    required this.featuresOfBiologyBody,
-    required this.spreadingBody,
-    required this.placesBody,
+    required this.distributionBody,
+    required this.habitatBody,
     required this.numberBody,
+    required this.lifeCycleBody,
     required this.limitBody,
-    required this.cultivationBody,
+    required this.breedingBody,
     required this.existingBody,
     required this.recommendedBody,
-    required this.color,
-    required this.status,
-    required this.colorStatus,
-    required this.nameLatColor,
   });
 
   final String name;
   final String nameLat;
+  final String status;
+  final Color color;
+  final Color colorStatus;
   final String statusBody;
-  final String descriptionBody;
-  final String featuresOfBiologyBody;
-  final String spreadingBody;
-  final String placesBody;
+
+  final String distributionBody;
+  final String habitatBody;
   final String numberBody;
+  final String lifeCycleBody;
   final String limitBody;
-  final String cultivationBody;
+
+  final String breedingBody;
   final String existingBody;
   final String recommendedBody;
-  final Color color;
-  final String status;
-  final Color colorStatus;
-  final Color nameLatColor;
 
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
       padding: const EdgeInsets.only(
+        top: 10,
         bottom: 30,
         left: 15,
         right: 15,
@@ -52,7 +52,6 @@ class SliverListWidget extends StatelessWidget {
       sliver: SliverList(
         delegate: SliverChildListDelegate(
           [
-            const SizedBox(height: 10),
             Text(
               name,
               style: AppText.redBookTitleText,
@@ -62,7 +61,7 @@ class SliverListWidget extends StatelessWidget {
               nameLat,
               style: GoogleFonts.raleway(
                 fontSize: 18,
-                color: nameLatColor,
+                color: AppColors.mammalsColors,
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -97,70 +96,91 @@ class SliverListWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 7),
-            Text(statusBody, style: AppText.redBookBodyText),
-            const SizedBox(height: 25),
             Text(
-              'Описание',
-              style: AppText.redBookTitleText,
+              statusBody,
+              style: AppText.redBookBodyText,
             ),
-            const SizedBox(height: 7),
-            Text(descriptionBody, style: AppText.redBookBodyText),
-            const SizedBox(height: 25),
-            Text(
-              'Особенности биологии',
-              style: AppText.redBookTitleText,
-            ),
-            const SizedBox(height: 7),
-            Text(featuresOfBiologyBody, style: AppText.redBookBodyText),
             const SizedBox(height: 25),
             Text(
               'Распространение',
               style: AppText.redBookTitleText,
             ),
-            const SizedBox(height: 7),
-            Text(spreadingBody, style: AppText.redBookBodyText),
+            const SizedBox(height: 5),
+            Text(
+              distributionBody,
+              style: AppText.redBookBodyText,
+            ),
             const SizedBox(height: 25),
             Text(
-              'Места произрастания',
+              'Места обитания',
               style: AppText.redBookTitleText,
             ),
-            const SizedBox(height: 7),
-            Text(placesBody, style: AppText.redBookBodyText),
+            const SizedBox(height: 5),
+            Text(
+              habitatBody,
+              style: AppText.redBookBodyText,
+            ),
             const SizedBox(height: 25),
             Text(
-              'Численность',
+              'Численность.',
               style: AppText.redBookTitleText,
             ),
-            const SizedBox(height: 7),
-            Text(numberBody, style: AppText.redBookBodyText),
+            const SizedBox(height: 5),
+            Text(
+              numberBody,
+              style: AppText.redBookBodyText,
+            ),
+            const SizedBox(height: 25),
+            Text(
+              'Жизненный цикл',
+              style: AppText.redBookTitleText,
+            ),
+            const SizedBox(height: 5),
+            Text(
+              lifeCycleBody,
+              style: AppText.redBookBodyText,
+            ),
             const SizedBox(height: 25),
             Text(
               'Лимитирующие факторы',
               style: AppText.redBookTitleText,
             ),
-            const SizedBox(height: 7),
-            Text(limitBody, style: AppText.redBookBodyText),
+            const SizedBox(height: 5),
+            Text(
+              limitBody,
+              style: AppText.redBookBodyText,
+            ),
             const SizedBox(height: 25),
             Text(
-              'Культивирование',
+              'Разведение',
               style: AppText.redBookTitleText,
             ),
-            const SizedBox(height: 7),
-            Text(cultivationBody, style: AppText.redBookBodyText),
+            const SizedBox(height: 5),
+            Text(
+              breedingBody,
+              style: AppText.redBookBodyText,
+            ),
             const SizedBox(height: 25),
             Text(
               'Меры охраны существующие',
               style: AppText.redBookTitleText,
             ),
-            const SizedBox(height: 7),
-            Text(existingBody, style: AppText.redBookBodyText),
+            const SizedBox(height: 5),
+            Text(
+              existingBody,
+              style: AppText.redBookBodyText,
+            ),
             const SizedBox(height: 25),
             Text(
               'Меры охраны рекомендуемые',
               style: AppText.redBookTitleText,
             ),
-            const SizedBox(height: 7),
-            Text(recommendedBody, style: AppText.redBookBodyText),
+            const SizedBox(height: 5),
+            Text(
+              recommendedBody,
+              style: AppText.redBookBodyText,
+            ),
+            const SizedBox(height: 25),
           ],
         ),
       ),

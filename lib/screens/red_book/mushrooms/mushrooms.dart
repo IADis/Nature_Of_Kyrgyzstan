@@ -51,10 +51,10 @@ class _LakesScreenState extends State<MushroomsScreen> {
                   image: data['image'],
                   name: data['name'],
                   nameLat: data['nameLat'],
-                  colorNameLat: AppColors.plantsColors,
+                  colorNameLat: AppColors.mushroomsColors,
                   navigate: MushroomsDetailScreen(documentSnapshot: data),
                   heroImage: data['image'],
-                  circularColor: AppColors.plantsColors,
+                  circularColor: AppColors.mushroomsColors,
                 );
               },
             );

@@ -6,6 +6,7 @@ import 'package:nature_of_kyrgyzstan/screens/red_book/plants/plants_detail_scree
 import 'package:nature_of_kyrgyzstan/screens/red_book/widgets/red_book_grid_items.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../widgets/red_book_app_bar.dart';
 import '../widgets/red_book_list_items.dart';
 
 class PlantsScreen extends StatefulWidget {
@@ -16,15 +17,15 @@ class PlantsScreen extends StatefulWidget {
 }
 
 class _LakesScreenState extends State<PlantsScreen> {
-  bool switchList = true;
+  bool _switchList = true;
 
   late final SharedPreferences prefs;
 
   void saveBool() async {
     setState(() {
-      switchList = !switchList;
+      _switchList = !_switchList;
     });
-    await prefs.setBool('save', switchList);
+    await prefs.setBool('save', _switchList);
   }
 
   @override
@@ -35,7 +36,7 @@ class _LakesScreenState extends State<PlantsScreen> {
 
   void initializePreference() async {
     prefs = await SharedPreferences.getInstance();
-    switchList = prefs.getBool('save') ?? false;
+    _switchList = prefs.getBool('save') ?? false;
     setState(() {});
   }
 
@@ -49,23 +50,11 @@ class _LakesScreenState extends State<PlantsScreen> {
         .snapshots();
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.scaffoldBackgroundColor,
-        foregroundColor: AppColors.appBarForegruoundColor,
-        title: Text(
-          'Высшие Растения',
-          style: AppText.redBookTitleText,
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-              onPressed: () {
-                saveBool();
-              },
-              icon: switchList
-                  ? const Icon(Icons.grid_view_rounded)
-                  : const Icon(Icons.view_list_sharp)),
-        ],
+      appBar: RedBookAppBar(
+        foregroundColor: AppColors.plantsColors,
+        title: 'Высшие Растения',
+        savebool: saveBool,
+        switchList: _switchList,
       ),
       backgroundColor: AppColors.scaffoldBackgroundColor,
       body: StreamBuilder<QuerySnapshot>(
@@ -80,7 +69,7 @@ class _LakesScreenState extends State<PlantsScreen> {
             );
           }
 
-          return switchList
+          return _switchList
               ? ListView.separated(
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 15),

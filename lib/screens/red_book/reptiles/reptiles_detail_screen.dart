@@ -52,6 +52,7 @@ class _LakesDetailScreenState extends State<ReptilesDetailScreen> {
             controller: _pageController,
             count: 5,
             color: AppColors.reptilesColors,
+            foregroundColor: AppColors.reptilesColors,
             images: [
               RedBookPageViewImages(
                 image: data['image'],

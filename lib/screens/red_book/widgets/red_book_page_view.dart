@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 
 class RedBookPageViewImages extends StatelessWidget {
   const RedBookPageViewImages({

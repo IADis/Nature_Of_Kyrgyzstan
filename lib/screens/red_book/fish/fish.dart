@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/components/app_text.dart';
+import 'package:nature_of_kyrgyzstan/screens/red_book/widgets/red_book_app_bar.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/widgets/red_book_grid_items.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/red_book_list_items.dart';
@@ -48,23 +49,11 @@ class _LakesScreenState extends State<FishScreen> {
         .snapshots();
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.scaffoldBackgroundColor,
-        foregroundColor: AppColors.appBarForegruoundColor,
-        title: Text(
-          'Членистоногие',
-          style: AppText.redBookTitleText,
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-              onPressed: () {
-                saveBool();
-              },
-              icon: _switchList
-                  ? const Icon(Icons.grid_view_rounded)
-                  : const Icon(Icons.view_list_sharp)),
-        ],
+      appBar: RedBookAppBar(
+        foregroundColor: AppColors.fishColors,
+        title: 'Рыбы',
+        savebool: saveBool,
+        switchList: _switchList,
       ),
       backgroundColor: AppColors.scaffoldBackgroundColor,
       body: StreamBuilder<QuerySnapshot>(

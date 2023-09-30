@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
+import 'package:nature_of_kyrgyzstan/screens/red_book/mammals/widget/mammals_detail_screen_items.dart';
 import '../widgets/red_book_page_view.dart';
 import '../widgets/sliver_app_bar_large.dart';
-import 'widgets/birds_details_screen_items.dart';
 
-class BirdsDetailScreen extends StatefulWidget {
-  const BirdsDetailScreen({
+class MammalsDetailScreen extends StatefulWidget {
+  const MammalsDetailScreen({
     super.key,
     required this.documentSnapshot,
   });
@@ -14,10 +14,10 @@ class BirdsDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<BirdsDetailScreen> createState() => _LakesDetailScreenState();
+  State<MammalsDetailScreen> createState() => _LakesDetailScreenState();
 }
 
-class _LakesDetailScreenState extends State<BirdsDetailScreen> {
+class _LakesDetailScreenState extends State<MammalsDetailScreen> {
   PageController _pageController = PageController();
   double pageOffset = 0;
 
@@ -51,27 +51,27 @@ class _LakesDetailScreenState extends State<BirdsDetailScreen> {
             name: data['name'],
             controller: _pageController,
             count: 3,
-            color: AppColors.birdsColors,
-            foregroundColor: AppColors.birdsColors,
+            color: AppColors.mammalsColors,
+            foregroundColor: AppColors.mammalsColors,
             images: [
               RedBookPageViewImages(
                 image: data['image'],
                 data: data['image'],
-                pageViewCircularColor: AppColors.birdsColors,
+                pageViewCircularColor: AppColors.mammalsColors,
               ),
               RedBookPageViewImages(
                 image: data['pageViewImage1'],
                 data: data['image'],
-                pageViewCircularColor: AppColors.birdsColors,
+                pageViewCircularColor: AppColors.mammalsColors,
               ),
               RedBookPageViewImages(
                 image: data['pageViewImage2'],
                 data: data['image'],
-                pageViewCircularColor: AppColors.birdsColors,
+                pageViewCircularColor: AppColors.mammalsColors,
               ),
             ],
           ),
-          BirdsDetailScreenItems(
+          MammalsDetailScreenItems(
             name: data['name'],
             nameLat: data['nameLat'],
             status: data['status'],

@@ -2,20 +2,20 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/components/app_text.dart';
-import 'package:nature_of_kyrgyzstan/screens/red_book/reptiles/reptiles_detail_screen.dart';
+import 'package:nature_of_kyrgyzstan/screens/red_book/widgets/red_book_app_bar.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/widgets/red_book_grid_items.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../widgets/red_book_app_bar.dart';
 import '../widgets/red_book_list_items.dart';
+import 'mammals_detail_screen.dart';
 
-class ReptilesScreen extends StatefulWidget {
-  const ReptilesScreen({super.key});
+class MammalsScreen extends StatefulWidget {
+  const MammalsScreen({super.key});
 
   @override
-  State<ReptilesScreen> createState() => _LakesScreenState();
+  State<MammalsScreen> createState() => _LakesScreenState();
 }
 
-class _LakesScreenState extends State<ReptilesScreen> {
+class _LakesScreenState extends State<MammalsScreen> {
   bool _switchList = true;
 
   late final SharedPreferences prefs;
@@ -41,8 +41,8 @@ class _LakesScreenState extends State<ReptilesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Stream<QuerySnapshot> reptiles = FirebaseFirestore.instance
-        .collection('redBookReptiles')
+    Stream<QuerySnapshot> mammals = FirebaseFirestore.instance
+        .collection('redBookMammals')
         .orderBy(
           'name',
         )
@@ -50,14 +50,14 @@ class _LakesScreenState extends State<ReptilesScreen> {
 
     return Scaffold(
       appBar: RedBookAppBar(
-        foregroundColor: AppColors.reptilesColors,
-        title: 'Амфибии и Рептилии',
+        foregroundColor: AppColors.mammalsColors,
+        title: 'Млекопитающие',
         savebool: saveBool,
         switchList: _switchList,
       ),
       backgroundColor: AppColors.scaffoldBackgroundColor,
       body: StreamBuilder<QuerySnapshot>(
-        stream: reptiles,
+        stream: mammals,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
             return const Text('Error');
@@ -79,12 +79,12 @@ class _LakesScreenState extends State<ReptilesScreen> {
                     final data = snapshot.data!.docs[index];
                     return RedBookListItems(
                       image: data['image'],
-                      navigate: ReptilesDetailScreen(documentSnapshot: data),
+                      navigate: MammalsDetailScreen(documentSnapshot: data),
                       name: data['name'],
                       nameLat: data['nameLat'],
-                      colorNameLat: AppColors.reptilesColors,
+                      colorNameLat: AppColors.mammalsColors,
                       heroImage: data['image'],
-                      circularColor: AppColors.reptilesColors,
+                      circularColor: AppColors.mammalsColors,
                     );
                   },
                 )
@@ -102,12 +102,12 @@ class _LakesScreenState extends State<ReptilesScreen> {
                     final data = snapshot.data!.docs[index];
                     return RedBookGridItems(
                       image: data['image'],
-                      navigate: ReptilesDetailScreen(documentSnapshot: data),
+                      navigate: MammalsDetailScreen(documentSnapshot: data),
                       name: data['name'],
                       nameLat: data['nameLat'],
-                      colorNameLat: AppColors.reptilesColors,
+                      colorNameLat: AppColors.mammalsColors,
                       heroGridImage: data['image'],
-                      circularColor: AppColors.reptilesColors,
+                      circularColor: AppColors.mammalsColors,
                     );
                   },
                 );

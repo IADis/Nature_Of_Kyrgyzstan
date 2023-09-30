@@ -9,6 +9,7 @@ class SliverAppBarLarge extends StatelessWidget {
     required this.controller,
     required this.images,
     required this.color,
+    required this.foregroundColor,
   });
 
   final String name;
@@ -16,14 +17,29 @@ class SliverAppBarLarge extends StatelessWidget {
   final List<Widget> images;
   final int count;
   final Color color;
+  final Color foregroundColor;
 
   @override
   Widget build(BuildContext context) {
     return SliverAppBar.large(
+      // bottom: PreferredSize(
+      //   preferredSize: Size.fromHeight(40),
+      //   child: Container(
+      //     height: 40,
+      //     decoration: BoxDecoration(
+      //       color: Colors.white,
+      //       borderRadius: BorderRadius.only(
+      //         topLeft: Radius.circular(20),
+      //         topRight: Radius.circular(20),
+      //       ),
+      //     ),
+      //   ),
+      // ),
       stretch: true,
+
       title: Text(name),
       pinned: true,
-      foregroundColor: const Color(0xffF1962C),
+      foregroundColor: foregroundColor,
       backgroundColor: const Color(0xffFFFFFF),
       elevation: 0,
       expandedHeight: 450,
@@ -35,13 +51,15 @@ class SliverAppBarLarge extends StatelessWidget {
               controller: controller,
               children: images,
             ),
-            Positioned(
+            Positioned.fill(
               top: 450,
-              right: 140,
-              child: SmoothIndicatorWidget(
-                controller: controller,
-                count: count,
-                color: color,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: SmoothIndicatorWidget(
+                  controller: controller,
+                  count: count,
+                  color: color,
+                ),
               ),
             ),
           ],
