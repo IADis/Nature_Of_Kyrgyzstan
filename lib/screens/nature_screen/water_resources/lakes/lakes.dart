@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
-import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar_with_search.dart';
+import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/list_view_items.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/lakes/detail_lakes_screen.dart';
 
@@ -24,11 +24,8 @@ class _LakesScreenState extends State<LakesScreen> {
 
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: AppBarWithSearchWidget(
-        text: 'Озёра',
-        onChanged: (value) {
-          setState(() {});
-        },
+      appBar: const AppBarWidget(
+        name: 'Озёра',
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: lakes,

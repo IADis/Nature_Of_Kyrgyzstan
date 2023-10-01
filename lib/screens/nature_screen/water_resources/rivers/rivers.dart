@@ -4,6 +4,8 @@ import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/river
 import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/page_view_images.dart';
 
+import '../../../../components/app_colors.dart';
+
 class RiversScreen extends StatefulWidget {
   const RiversScreen({super.key});
 
@@ -18,8 +20,12 @@ class _RiversScreenState extends State<RiversScreen> {
         FirebaseFirestore.instance.collection('rivers').snapshots();
 
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
-      appBar: const AppBarWidget(),
+      backgroundColor: AppColors.scaffoldBackgroundColor,
+      appBar: AppBar(
+        foregroundColor: AppColors.appBarForegruoundColor,
+        backgroundColor: AppColors.appBarBackgroundColor,
+        elevation: 0,
+      ),
       body: StreamBuilder(
         stream: rivers,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {

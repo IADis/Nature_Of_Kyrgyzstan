@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
-import 'package:nature_of_kyrgyzstan/components/app_text.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/widgets/red_book_app_bar.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/widgets/red_book_grid_items.dart';
 import 'package:shared_preferences/shared_preferences.dart';

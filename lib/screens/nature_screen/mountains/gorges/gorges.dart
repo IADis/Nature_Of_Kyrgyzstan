@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
-import '../../../widgets/app_bar_with_search.dart';
+import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
 import '../../../widgets/list_view_items.dart';
 import 'datail_gorges_screen.dart';
 
@@ -23,11 +23,8 @@ class _GorgesScreenState extends State<GorgesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: AppBarWithSearchWidget(
-        text: 'Ущелья',
-        onChanged: (value) {
-          setState(() {});
-        },
+      appBar: const AppBarWidget(
+        name: 'Ущелья',
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: gorges,

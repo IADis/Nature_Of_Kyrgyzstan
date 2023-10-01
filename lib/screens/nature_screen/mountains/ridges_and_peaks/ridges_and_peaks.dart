@@ -20,7 +20,11 @@ class _RidgesAndPeaksScreenState extends State<RidgesAndPeaksScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: const AppBarWidget(),
+      appBar: AppBar(
+        foregroundColor: AppColors.appBarForegruoundColor,
+        backgroundColor: AppColors.appBarBackgroundColor,
+        elevation: 0,
+      ),
       body: StreamBuilder(
         stream: ridgesAndPeaks,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {

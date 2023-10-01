@@ -21,7 +21,9 @@ class _CanyonsScreenState extends State<CanyonsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: const AppBarWidget(),
+      appBar: const AppBarWidget(
+        name: 'Каньоны',
+      ),
       body: StreamBuilder(
         stream: canyons,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {

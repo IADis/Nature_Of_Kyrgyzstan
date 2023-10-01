@@ -2,10 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nature_of_kyrgyzstan/auth/auth_screens/main_screen/main_screen.dart';
-import 'package:nature_of_kyrgyzstan/auth/bloc/auth_bloc.dart';
-import 'package:nature_of_kyrgyzstan/auth/repository/auth_repo.dart';
 import 'package:nature_of_kyrgyzstan/firebase_options.dart';
+import 'package:nature_of_kyrgyzstan/screens/home_screen/home_screen.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/mountains/main_mountains/bloc/mountains_bloc.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/mountains/main_mountains/repository/mountain_repo.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/main_reserves/bloc/reserves_bloc.dart';
@@ -37,9 +35,6 @@ class MyApp extends StatelessWidget {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider(
-          create: (context) => AuthRepo(),
-        ),
-        RepositoryProvider(
           create: (context) => MountainsRepo(),
         ),
         RepositoryProvider(
@@ -51,10 +46,6 @@ class MyApp extends StatelessWidget {
       ],
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(
-            create: (context) =>
-                AuthBloc(authRepo: RepositoryProvider.of<AuthRepo>(context)),
-          ),
           BlocProvider(
             create: (context) => MountainsBloc(
               mountainsRepo: RepositoryProvider.of<MountainsRepo>(context),
@@ -73,10 +64,9 @@ class MyApp extends StatelessWidget {
           ),
         ],
         child: const MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          home: MainScreen(),
-        ),
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            home: HomeScreen()),
       ),
     );
   }

@@ -19,7 +19,9 @@ class ReservesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: const AppBarWidget(),
+      appBar: const AppBarWidget(
+        name: 'Заповедники',
+      ),
       body: const CustomScrollView(
         slivers: [
           SliverToBoxAdapter(

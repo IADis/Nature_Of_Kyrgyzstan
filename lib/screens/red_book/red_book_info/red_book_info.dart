@@ -4,21 +4,25 @@ import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
 import 'widgets/red_book_list.dart';
 
-class RedBoodInfo extends StatefulWidget {
-  const RedBoodInfo({super.key});
+class RedBookInfo extends StatefulWidget {
+  const RedBookInfo({super.key});
 
   @override
-  State<RedBoodInfo> createState() => _RedBoodInfoState();
+  State<RedBookInfo> createState() => _RedBookInfoState();
 }
 
-class _RedBoodInfoState extends State<RedBoodInfo> {
+class _RedBookInfoState extends State<RedBookInfo> {
   Stream<QuerySnapshot> redBook =
       FirebaseFirestore.instance.collection('redBook').snapshots();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: const AppBarWidget(),
+      appBar: AppBar(
+        foregroundColor: AppColors.appBarForegruoundColor,
+        backgroundColor: AppColors.appBarBackgroundColor,
+        elevation: 0,
+      ),
       body: StreamBuilder(
         stream: redBook,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {

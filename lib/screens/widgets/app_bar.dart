@@ -20,10 +20,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
     return AppBar(
       foregroundColor: AppColors.appBarForegruoundColor,
       backgroundColor: AppColors.appBarBackgroundColor,
-      elevation: 0,
       title: Text(
         widget.name ?? '',
-        style: AppText.redBookTitleText,
+        style: AppText.titleTextStyle,
       ),
       centerTitle: true,
     );

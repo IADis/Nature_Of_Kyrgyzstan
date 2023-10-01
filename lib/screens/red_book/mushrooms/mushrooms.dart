@@ -1,9 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
+import 'package:nature_of_kyrgyzstan/components/app_text.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/mushrooms/mushrooms_detail_screen.dart';
-import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
-
 import '../widgets/red_book_list_items.dart';
 
 class MushroomsScreen extends StatefulWidget {
@@ -25,8 +24,14 @@ class _LakesScreenState extends State<MushroomsScreen> {
 
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: const AppBarWidget(
-        name: 'Грибы',
+      appBar: AppBar(
+        title: Text(
+          'Грибы',
+          style: AppText.redBookTitleText,
+        ),
+        centerTitle: true,
+        foregroundColor: AppColors.mushroomsColors,
+        backgroundColor: AppColors.appBarBackgroundColor,
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: mushrooms,

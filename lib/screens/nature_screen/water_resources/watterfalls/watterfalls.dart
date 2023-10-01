@@ -27,7 +27,11 @@ class _WatterfallsScreenState extends State<WatterfallsScreen> {
         FirebaseFirestore.instance.collection('watterfalls').snapshots();
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: const AppBarWidget(),
+      appBar: AppBar(
+        foregroundColor: AppColors.appBarForegruoundColor,
+        backgroundColor: AppColors.appBarBackgroundColor,
+        elevation: 0,
+      ),
       body: StreamBuilder(
         stream: watterfalls,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
