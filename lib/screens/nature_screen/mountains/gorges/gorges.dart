@@ -25,6 +25,7 @@ class _GorgesScreenState extends State<GorgesScreen> {
       backgroundColor: AppColors.scaffoldBackgroundColor,
       appBar: const AppBarWidget(
         name: 'Ущелья',
+        elevation: 4,
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: gorges,

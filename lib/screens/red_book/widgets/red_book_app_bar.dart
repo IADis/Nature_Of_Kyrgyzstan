@@ -27,6 +27,15 @@ class _RedBookAppBarState extends State<RedBookAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      leading: IconButton(
+        iconSize: 34,
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: const Icon(
+          Icons.arrow_back,
+        ),
+      ),
       backgroundColor: AppColors.scaffoldBackgroundColor,
       foregroundColor: widget.foregroundColor,
       title: Text(
@@ -36,12 +45,17 @@ class _RedBookAppBarState extends State<RedBookAppBar> {
       centerTitle: true,
       actions: [
         IconButton(
-            onPressed: () {
-              widget.savebool();
-            },
-            icon: widget.switchList
-                ? const Icon(Icons.grid_view_rounded)
-                : const Icon(Icons.view_list_sharp)),
+          iconSize: 34,
+          highlightColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          splashColor: Colors.transparent,
+          onPressed: () {
+            widget.savebool();
+          },
+          icon: widget.switchList
+              ? const Icon(Icons.grid_view_rounded)
+              : const Icon(Icons.view_list_sharp),
+        ),
       ],
     );
   }

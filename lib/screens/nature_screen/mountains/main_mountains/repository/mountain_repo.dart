@@ -12,7 +12,7 @@ class MountainsRepo {
   final _mountains = [
     MountainsModel(
       image:
-          'https://firebasestorage.googleapis.com/v0/b/nature-of-kyrgyzstan.appspot.com/o/main_images%2FGorges.jpg?alt=media&token=1b34408a-17e9-4682-b25f-f59b7e11e645',
+          'https://firebasestorage.googleapis.com/v0/b/nature-of-kyrgyzstan.appspot.com/o/main_images%2FGorges.jpg?alt=media&token=d8fbe88c-df31-4350-a33d-8e49e0170d78&_gl=1*vtrcma*_ga*MTg0MzUwNDI3My4xNjk2MDAxNjEx*_ga_CW55HF8NVT*MTY5NjI0MzUzMC42LjEuMTY5NjI0NDQ1MS45LjAuMA..',
       name: 'Ущелья',
       navigate: const GorgesScreen(),
     ),

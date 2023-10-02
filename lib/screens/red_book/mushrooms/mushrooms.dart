@@ -25,6 +25,14 @@ class _LakesScreenState extends State<MushroomsScreen> {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
       appBar: AppBar(
+        leading: IconButton(
+            iconSize: 34,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+            )),
         title: Text(
           'Грибы',
           style: AppText.redBookTitleText,
@@ -41,7 +49,9 @@ class _LakesScreenState extends State<MushroomsScreen> {
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: AppColors.mushroomsColors,
+              ),
             );
           }
 

@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/screens/home_screen/bottom_nav_icons_icons.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/nature_screen.dart';
@@ -31,8 +31,16 @@ class _HomeScreenState extends State<HomeScreen>
         backgroundColor: AppColors.scaffoldBackgroundColor,
         unselectedItemColor: Colors.blueAccent,
         selectedItemColor: Colors.green,
+        iconSize: 28,
+        selectedLabelStyle: GoogleFonts.montserrat(
+          fontWeight: FontWeight.w700,
+        ),
+        unselectedLabelStyle: GoogleFonts.montserrat(
+          fontWeight: FontWeight.w500,
+        ),
+        selectedFontSize: 16,
+        unselectedFontSize: 14,
         type: BottomNavigationBarType.fixed,
-        elevation: 5,
         currentIndex: _currentIndex,
         onTap: (index) {
           _currentIndex = index;
@@ -41,15 +49,18 @@ class _HomeScreenState extends State<HomeScreen>
         items: const [
           BottomNavigationBarItem(
             icon: Icon(
-              BottomNavIcons.plant_icon,
-              size: 20,
+              BottomNavIcons.nature,
             ),
             label: 'Природа',
           ),
           BottomNavigationBarItem(
+            activeIcon: Icon(
+              BottomNavIcons.redbookactive,
+              color: Colors.red,
+            ),
             backgroundColor: Colors.amber,
             icon: Icon(
-              BottomNavIcons.red_book_icon,
+              BottomNavIcons.redBook,
             ),
             label: 'Красная Книга',
           ),

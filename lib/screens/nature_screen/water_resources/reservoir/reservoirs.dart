@@ -2,8 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/reservoir/widgets/reservoirs_list.dart';
-import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/page_view_images.dart';
+
+import '../../../widgets/app_bar.dart';
 
 class ReservoirsScreen extends StatefulWidget {
   const ReservoirsScreen({super.key});
@@ -33,9 +34,8 @@ class _ReservoirsScreenState extends State<ReservoirsScreen> {
         FirebaseFirestore.instance.collection('reservoirs').snapshots();
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: AppBar(
-        foregroundColor: AppColors.appBarForegruoundColor,
-        backgroundColor: AppColors.appBarBackgroundColor,
+      appBar: const AppBarWidget(
+        name: '',
         elevation: 0,
       ),
       body: StreamBuilder(

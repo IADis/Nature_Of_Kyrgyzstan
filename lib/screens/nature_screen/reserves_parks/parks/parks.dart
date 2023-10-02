@@ -52,14 +52,13 @@ class _ParksScreenState extends State<ParksScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 IconButton(
+                  iconSize: 34,
                   splashColor: const Color(0x00000000),
                   splashRadius: 0.1,
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: const Icon(
-                    Icons.arrow_back_ios,
-                  ),
+                  icon: const Icon(Icons.arrow_back),
                 ),
                 const SizedBox(height: 10),
                 Text(

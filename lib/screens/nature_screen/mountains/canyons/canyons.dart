@@ -23,6 +23,7 @@ class _CanyonsScreenState extends State<CanyonsScreen> {
       backgroundColor: AppColors.scaffoldBackgroundColor,
       appBar: const AppBarWidget(
         name: 'Каньоны',
+        elevation: 4,
       ),
       body: StreamBuilder(
         stream: canyons,

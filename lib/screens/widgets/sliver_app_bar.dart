@@ -1,4 +1,3 @@
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
@@ -20,6 +19,15 @@ class SliverAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      leading: IconButton(
+        iconSize: 34,
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: const Icon(
+          Icons.arrow_back,
+        ),
+      ),
       foregroundColor: Colors.orange,
       backgroundColor: AppColors.scaffoldBackgroundColor,
       elevation: 0,
@@ -51,9 +59,9 @@ class SliverAppBarWidget extends StatelessWidget {
         child: Container(
           height: containerHeight,
           width: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: AppColors.scaffoldBackgroundColor,
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               topLeft: Radius.circular(30),
               topRight: Radius.circular(30),
             ),

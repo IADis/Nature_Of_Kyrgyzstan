@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/components/app_text.dart';
 
+import '../../../widgets/app_bar.dart';
+
 class GeneralInfoScreen extends StatefulWidget {
   const GeneralInfoScreen({super.key});
 
@@ -17,9 +19,8 @@ class _GeneralInfoScreenState extends State<GeneralInfoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: AppBar(
-        foregroundColor: AppColors.appBarForegruoundColor,
-        backgroundColor: AppColors.appBarBackgroundColor,
+      appBar: const AppBarWidget(
+        name: '',
         elevation: 0,
       ),
       body: StreamBuilder(

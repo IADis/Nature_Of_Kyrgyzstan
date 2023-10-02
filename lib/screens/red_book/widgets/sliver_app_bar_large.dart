@@ -39,6 +39,15 @@ class SliverAppBarLarge extends StatelessWidget {
 
       title: Text(name),
       pinned: true,
+      leading: IconButton(
+        iconSize: 34,
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: const Icon(
+          Icons.arrow_back,
+        ),
+      ),
       foregroundColor: foregroundColor,
       backgroundColor: const Color(0xffFFFFFF),
       elevation: 0,

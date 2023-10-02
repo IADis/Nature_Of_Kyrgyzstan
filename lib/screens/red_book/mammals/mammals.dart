@@ -63,7 +63,9 @@ class _LakesScreenState extends State<MammalsScreen> {
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: AppColors.mammalsColors,
+              ),
             );
           }
 

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/components/app_text.dart';
+import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/page_view_images.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/smooth_page.dart';
 
@@ -23,9 +24,8 @@ class _GlaciersScreenState extends State<GlaciersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: AppBar(
-        backgroundColor: AppColors.appBarBackgroundColor,
-        foregroundColor: AppColors.appBarForegruoundColor,
+      appBar: const AppBarWidget(
+        name: '',
         elevation: 0,
       ),
       body: StreamBuilder(

@@ -17,12 +17,13 @@ class ReservesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: const AppBarWidget(
+      appBar: AppBarWidget(
         name: 'Заповедники',
+        elevation: 4,
       ),
-      body: const CustomScrollView(
+      body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: Column(

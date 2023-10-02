@@ -2,8 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/mountains/ridges_and_peaks/widgets/ridges_and_peaks_list.dart';
-import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
 import 'package:nature_of_kyrgyzstan/screens/widgets/page_view_images.dart';
+
+import '../../../widgets/app_bar.dart';
 
 class RidgesAndPeaksScreen extends StatefulWidget {
   const RidgesAndPeaksScreen({super.key});
@@ -20,9 +21,8 @@ class _RidgesAndPeaksScreenState extends State<RidgesAndPeaksScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: AppBar(
-        foregroundColor: AppColors.appBarForegruoundColor,
-        backgroundColor: AppColors.appBarBackgroundColor,
+      appBar: const AppBarWidget(
+        name: '',
         elevation: 0,
       ),
       body: StreamBuilder(

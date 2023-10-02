@@ -26,6 +26,7 @@ class _LakesScreenState extends State<LakesScreen> {
       backgroundColor: AppColors.scaffoldBackgroundColor,
       appBar: const AppBarWidget(
         name: 'Озёра',
+        elevation: 4,
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: lakes,

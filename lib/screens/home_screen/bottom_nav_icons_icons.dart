@@ -13,8 +13,6 @@
 ///
 ///
 ///
-// ignore_for_file: constant_identifier_names
-
 import 'package:flutter/widgets.dart';
 
 class BottomNavIcons {
@@ -23,8 +21,10 @@ class BottomNavIcons {
   static const _kFontFam = 'BottomNavIcons';
   static const String? _kFontPkg = null;
 
-  static const IconData plant_icon =
+  static const IconData nature =
       IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData red_book_icon =
+  static const IconData redbookactive =
       IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData redBook =
+      IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
