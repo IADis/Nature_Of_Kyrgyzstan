@@ -13,6 +13,7 @@ class MainMountainsItem extends StatelessWidget {
       modelNavigate: model.navigate,
       modelImage: model.image,
       modelName: model.name,
+      modelCount: model.count,
     );
   }
 }

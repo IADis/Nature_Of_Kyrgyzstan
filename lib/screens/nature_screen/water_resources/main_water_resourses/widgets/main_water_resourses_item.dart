@@ -13,8 +13,10 @@ class WaterResoursesItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MainListItem(
-        modelNavigate: model.navigate,
-        modelImage: model.image,
-        modelName: model.name);
+      modelNavigate: model.navigate,
+      modelImage: model.image,
+      modelName: model.name,
+      modelCount: model.count,
+    );
   }
 }

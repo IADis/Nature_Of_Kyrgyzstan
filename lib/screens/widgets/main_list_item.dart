@@ -10,10 +10,12 @@ class MainListItem extends StatelessWidget {
     required this.modelNavigate,
     required this.modelImage,
     required this.modelName,
+    required this.modelCount,
   });
   final Widget modelNavigate;
   final String modelImage;
   final String modelName;
+  final Widget modelCount;
 
   @override
   Widget build(BuildContext context) {
@@ -73,14 +75,8 @@ class MainListItem extends StatelessWidget {
                               // border: Border.all(width: 0.5, color: Colors.white),
                               color: Colors.white.withOpacity(0.2),
                               shape: BoxShape.circle),
-                          child: const Center(
-                            child: Text(
-                              '20',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 34,
-                              ),
-                            ),
+                          child: Center(
+                            child: modelCount,
                           ),
                         ),
                       ),

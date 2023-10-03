@@ -91,7 +91,7 @@ flutter:
   fonts:
     - family: BottomNavIcons
       fonts:
-        - asset: icons/BottomNavIcons.ttf
+        - asset: icons/BottomNavIcons.ttf     
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
-import 'package:nature_of_kyrgyzstan/screens/home_screen/bottom_nav_icons_icons.dart';
+import 'package:nature_of_kyrgyzstan/screens/bottom_nav_icons_icons.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/nature_screen.dart';
 
 import '../red_book/red_book_screen.dart';
@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen>
             ),
             backgroundColor: Colors.amber,
             icon: Icon(
-              BottomNavIcons.redBook,
+              BottomNavIcons.redbook,
             ),
             label: 'Красная Книга',
           ),

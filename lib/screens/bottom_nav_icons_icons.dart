@@ -11,7 +11,7 @@
 ///      fonts:
 ///       - asset: fonts/BottomNavIcons.ttf
 ///
-///
+/// 
 ///
 import 'package:flutter/widgets.dart';
 
@@ -21,10 +21,8 @@ class BottomNavIcons {
   static const _kFontFam = 'BottomNavIcons';
   static const String? _kFontPkg = null;
 
-  static const IconData nature =
-      IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData redbookactive =
-      IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData redBook =
-      IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData redbook = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData info = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData redbookactive = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData nature = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
