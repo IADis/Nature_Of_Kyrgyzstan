@@ -10,11 +10,13 @@ class RedBookScreenItem extends StatelessWidget {
     required this.name,
     required this.navigate,
     required this.image,
+    required this.count,
   });
 
   final String name;
   final Widget navigate;
   final String image;
+  final Widget count;
 
   @override
   Widget build(BuildContext context) {
@@ -66,20 +68,40 @@ class RedBookScreenItem extends StatelessWidget {
                       borderRadius: BorderRadius.circular(40),
                       child: BackdropFilter(
                         filter: ImageFilter.blur(
-                          sigmaX: 2,
-                          sigmaY: 2,
+                          sigmaX: 5,
+                          sigmaY: 5,
                         ),
                         child: Container(
-                          height: 40,
-                          width: 40,
+                          height: 55,
+                          width: 55,
                           decoration: BoxDecoration(
                               // border: Border.all(width: 0.5, color: Colors.white),
-                              color: Colors.white.withOpacity(0.1),
+                              color: Colors.white.withOpacity(0.2),
+                              shape: BoxShape.circle),
+                          child: Center(
+                            child: count,
+                          ),
+                        ),
+                      ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(40),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(
+                          sigmaX: 5,
+                          sigmaY: 5,
+                        ),
+                        child: Container(
+                          height: 55,
+                          width: 55,
+                          decoration: BoxDecoration(
+                              // border: Border.all(width: 0.5, color: Colors.white),
+                              color: Colors.white.withOpacity(0.2),
                               shape: BoxShape.circle),
                           child: const Icon(
-                            Icons.arrow_forward_ios,
+                            Icons.arrow_forward,
                             color: Colors.white,
-                            size: 30,
+                            size: 34,
                           ),
                         ),
                       ),

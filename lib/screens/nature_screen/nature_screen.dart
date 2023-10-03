@@ -15,63 +15,60 @@ class NatureScreen extends StatefulWidget {
 class _NatureScreenState extends State<NatureScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.scaffoldBackgroundColor,
-      body: CustomScrollView(
-        slivers: [
-          const SliverToBoxAdapter(
-            child: SizedBox(height: 60),
+    return CustomScrollView(
+      slivers: [
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 60),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Text(
+              'Горы',
+              style: AppText.mainTitleTextStyle,
+            ),
           ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+        ),
+        const SliverToBoxAdapter(
+          child: SizedBox(
+            height: 220,
+            child: MainMountain(),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Text(
+              'Водные ресуры',
+              style: AppText.mainTitleTextStyle,
+            ),
+          ),
+        ),
+        const SliverToBoxAdapter(
+          child: SizedBox(
+            height: 220,
+            child: MainWaterResourses(),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 30),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
               child: Text(
-                'Горы',
+                'Заповедники. Национальные парки. Заказники.',
                 style: AppText.mainTitleTextStyle,
               ),
             ),
           ),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 220,
-              child: MainMountain(),
-            ),
+        ),
+        const SliverToBoxAdapter(
+          child: SizedBox(
+            height: 220,
+            child: MainReserves(),
           ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Text(
-                'Водные ресуры',
-                style: AppText.mainTitleTextStyle,
-              ),
-            ),
-          ),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 220,
-              child: MainWaterResourses(),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 30),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Text(
-                  'Заповедники. Национальные парки. Заказники.',
-                  style: AppText.mainTitleTextStyle,
-                ),
-              ),
-            ),
-          ),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 220,
-              child: MainReserves(),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
