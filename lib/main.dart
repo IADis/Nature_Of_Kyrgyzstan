@@ -11,6 +11,8 @@ import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/main_r
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/main_water_resourses/bloc/water_resourses_bloc.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/main_water_resourses/repository/water_resourses_repo.dart';
 
+import 'screens/splash_screen/splash_screen.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -66,7 +68,7 @@ class MyApp extends StatelessWidget {
         child: const MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
-            home: HomeScreen()),
+            home: SplashScreen()),
       ),
     );
   }
