@@ -1,20 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
-import 'package:nature_of_kyrgyzstan/screens/red_book/widgets/red_book_app_bar.dart';
+import 'package:nature_of_kyrgyzstan/screens/red_book/fish/fish_details_screen.dart';
 import 'package:nature_of_kyrgyzstan/screens/red_book/widgets/red_book_grid_items.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../widgets/red_book_app_bar.dart';
 import '../widgets/red_book_list_items.dart';
-import 'fish_details_screen.dart';
 
 class FishScreen extends StatefulWidget {
   const FishScreen({super.key});
 
   @override
-  State<FishScreen> createState() => _LakesScreenState();
+  State<FishScreen> createState() => _FishScreenState();
 }
 
-class _LakesScreenState extends State<FishScreen> {
+class _FishScreenState extends State<FishScreen> {
   bool _switchList = true;
 
   late final SharedPreferences prefs;
@@ -79,12 +79,12 @@ class _LakesScreenState extends State<FishScreen> {
                   itemBuilder: (context, index) {
                     final data = snapshot.data!.docs[index];
                     return RedBookListItems(
-                      image: data['image'],
+                      image: data['pageViewImage1'],
                       navigate: FishDetailScreen(documentSnapshot: data),
                       name: data['name'],
                       nameLat: data['nameLat'],
                       colorNameLat: AppColors.fishColors,
-                      heroImage: data['image'],
+                      heroImage: data['pageViewImage1'],
                       circularColor: AppColors.fishColors,
                     );
                   },
@@ -102,12 +102,12 @@ class _LakesScreenState extends State<FishScreen> {
                   itemBuilder: (context, index) {
                     final data = snapshot.data!.docs[index];
                     return RedBookGridItems(
-                      image: data['image'],
+                      image: data['pageViewImage1'],
                       navigate: FishDetailScreen(documentSnapshot: data),
                       name: data['name'],
                       nameLat: data['nameLat'],
                       colorNameLat: AppColors.fishColors,
-                      heroGridImage: data['image'],
+                      heroGridImage: data['pageViewImage1'],
                       circularColor: AppColors.fishColors,
                     );
                   },

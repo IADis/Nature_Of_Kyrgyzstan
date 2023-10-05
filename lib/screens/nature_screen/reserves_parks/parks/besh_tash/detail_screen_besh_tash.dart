@@ -12,10 +12,10 @@ class BeshTashDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<BeshTashDetailScreen> createState() => _AlaArchaDetailScreenState();
+  State<BeshTashDetailScreen> createState() => _BeshTashDetailScreenState();
 }
 
-class _AlaArchaDetailScreenState extends State<BeshTashDetailScreen> {
+class _BeshTashDetailScreenState extends State<BeshTashDetailScreen> {
   final _controller = PageController();
 
   @override

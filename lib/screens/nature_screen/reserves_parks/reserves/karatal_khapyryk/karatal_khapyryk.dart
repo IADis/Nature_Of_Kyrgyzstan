@@ -7,10 +7,10 @@ class KaratalKhapyryk extends StatefulWidget {
   const KaratalKhapyryk({super.key});
 
   @override
-  State<KaratalKhapyryk> createState() => _AlaArchaState();
+  State<KaratalKhapyryk> createState() => _KaratalKhapyrykState();
 }
 
-class _AlaArchaState extends State<KaratalKhapyryk> {
+class _KaratalKhapyrykState extends State<KaratalKhapyryk> {
   final Stream<QuerySnapshot> reserves =
       FirebaseFirestore.instance.collection('reserves').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<KaratalKhapyryk> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         if (snapshot.hasData) {
@@ -37,7 +39,10 @@ class _AlaArchaState extends State<KaratalKhapyryk> {
             navigate: KaratalKhapyrykDetailScreen(documentSnapshot: data),
           );
         }
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+            child: CircularProgressIndicator(
+          color: Colors.amber,
+        ));
       },
     );
   }

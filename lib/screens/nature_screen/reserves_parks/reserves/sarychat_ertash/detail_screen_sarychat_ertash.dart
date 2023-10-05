@@ -13,10 +13,11 @@ class SarychatErtashDetailScreen extends StatefulWidget {
 
   @override
   State<SarychatErtashDetailScreen> createState() =>
-      _AlaArchaDetailScreenState();
+      _SarychatErtashDetailScreenState();
 }
 
-class _AlaArchaDetailScreenState extends State<SarychatErtashDetailScreen> {
+class _SarychatErtashDetailScreenState
+    extends State<SarychatErtashDetailScreen> {
   final _controller = PageController();
 
   @override

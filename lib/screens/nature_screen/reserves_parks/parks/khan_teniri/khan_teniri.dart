@@ -7,10 +7,10 @@ class KhanTeniri extends StatefulWidget {
   const KhanTeniri({super.key});
 
   @override
-  State<KhanTeniri> createState() => _AlaArchaState();
+  State<KhanTeniri> createState() => _KhanTeniriState();
 }
 
-class _AlaArchaState extends State<KhanTeniri> {
+class _KhanTeniriState extends State<KhanTeniri> {
   final Stream<QuerySnapshot> parks =
       FirebaseFirestore.instance.collection('parks').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<KhanTeniri> {
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: Colors.amber,
+              ),
             );
           }
 

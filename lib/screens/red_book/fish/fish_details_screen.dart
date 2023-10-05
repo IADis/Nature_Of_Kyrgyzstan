@@ -14,10 +14,10 @@ class FishDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<FishDetailScreen> createState() => _LakesDetailScreenState();
+  State<FishDetailScreen> createState() => _FishDetailScreenState();
 }
 
-class _LakesDetailScreenState extends State<FishDetailScreen> {
+class _FishDetailScreenState extends State<FishDetailScreen> {
   PageController _pageController = PageController();
   double pageOffset = 0;
 
@@ -50,23 +50,13 @@ class _LakesDetailScreenState extends State<FishDetailScreen> {
           SliverAppBarLarge(
             name: data['name'],
             controller: _pageController,
-            count: 3,
+            count: 1,
             color: AppColors.fishColors,
             foregroundColor: AppColors.fishColors,
             images: [
               RedBookPageViewImages(
-                image: data['image'],
-                data: data['image'],
-                pageViewCircularColor: AppColors.fishColors,
-              ),
-              RedBookPageViewImages(
                 image: data['pageViewImage1'],
-                data: data['image'],
-                pageViewCircularColor: AppColors.fishColors,
-              ),
-              RedBookPageViewImages(
-                image: data['pageViewImage2'],
-                data: data['image'],
+                data: data['pageViewImage1'],
                 pageViewCircularColor: AppColors.fishColors,
               ),
             ],
@@ -78,43 +68,43 @@ class _LakesDetailScreenState extends State<FishDetailScreen> {
             color: Color(int.tryParse(data['color'])!.toInt()),
             colorStatus: Color(int.tryParse(data['colorStatus'])!.toInt()),
             statusBody: data['statusBody'].toString().replaceAll(
-                  RegExp(r'\[\d+(,\s*\d+)?\]'),
+                  RegExp(r'\[\d+(,\s*\d+)*\]'),
                   '',
                 ),
             descriptionBody: data['descriptionBody'].toString().replaceAll(
-                  RegExp(r'\[\d+(,\s*\d+)?\]'),
+                  RegExp(r'\[\d+(,\s*\d+)*\]'),
                   '',
                 ),
             distributionBody: data['distributionBody'].toString().replaceAll(
-                  RegExp(r'\[\d+(,\s*\d+)?\]'),
+                  RegExp(r'\[\d+(,\s*\d+)*\]'),
                   '',
                 ),
             habitatBody: data['habitatBody'].toString().replaceAll(
-                  RegExp(r'\[\d+(,\s*\d+)?\]'),
+                  RegExp(r'\[\d+(,\s*\d+)*\]'),
                   '',
                 ),
             numberBody: data['numberBody'].toString().replaceAll(
-                  RegExp(r'\[\d+(,\s*\d+)?\]'),
+                  RegExp(r'\[\d+(,\s*\d+)*\]'),
                   '',
                 ),
             lifeCycleBody: data['lifeCycleBody'].toString().replaceAll(
-                  RegExp(r'\[\d+(,\s*\d+)?\]'),
+                  RegExp(r'\[\d+(,\s*\d+)*\]'),
                   '',
                 ),
             limitBody: data['limitBody'].toString().replaceAll(
-                  RegExp(r'\[\d+(,\s*\d+)?\]'),
+                  RegExp(r'\[\d+(,\s*\d+)*\]'),
                   '',
                 ),
             breedingBody: data['breedingBody'].toString().replaceAll(
-                  RegExp(r'\[\d+(,\s*\d+)?\]'),
+                  RegExp(r'\[\d+(,\s*\d+)*\]'),
                   '',
                 ),
             existingBody: data['existingBody'].toString().replaceAll(
-                  RegExp(r'\[\d+(,\s*\d+)?\]'),
+                  RegExp(r'\[\d+(,\s*\d+)*\]'),
                   '',
                 ),
             recommendedBody: data['recommendedBody'].toString().replaceAll(
-                  RegExp(r'\[\d+(,\s*\d+)?\]'),
+                  RegExp(r'\[\d+(,\s*\d+)*\]'),
                   '',
                 ),
           ),

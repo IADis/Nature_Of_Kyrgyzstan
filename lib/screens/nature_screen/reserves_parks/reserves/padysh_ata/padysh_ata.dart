@@ -7,10 +7,10 @@ class PadyshAta extends StatefulWidget {
   const PadyshAta({super.key});
 
   @override
-  State<PadyshAta> createState() => _AlaArchaState();
+  State<PadyshAta> createState() => _PadyshAtaState();
 }
 
-class _AlaArchaState extends State<PadyshAta> {
+class _PadyshAtaState extends State<PadyshAta> {
   final Stream<QuerySnapshot> reserves =
       FirebaseFirestore.instance.collection('reserves').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<PadyshAta> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         if (snapshot.hasData) {
@@ -37,7 +39,10 @@ class _AlaArchaState extends State<PadyshAta> {
             navigate: PadyshAtaDetailScreen(documentSnapshot: data),
           );
         }
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+            child: CircularProgressIndicator(
+          color: Colors.amber,
+        ));
       },
     );
   }

@@ -69,11 +69,6 @@ class RedBookInfoList extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              redBookDes,
-              style: AppText.mainTitleTextStyle,
-            ),
-            const SizedBox(height: 20),
-            Text(
               redBookList.toString().replaceAll('\\n', '\n'),
               style: AppText.bodyTextStyle,
             ),

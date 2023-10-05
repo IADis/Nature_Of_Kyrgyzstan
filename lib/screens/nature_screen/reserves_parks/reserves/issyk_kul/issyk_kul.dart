@@ -7,10 +7,10 @@ class IssykKul extends StatefulWidget {
   const IssykKul({super.key});
 
   @override
-  State<IssykKul> createState() => _AlaArchaState();
+  State<IssykKul> createState() => _IssykKulState();
 }
 
-class _AlaArchaState extends State<IssykKul> {
+class _IssykKulState extends State<IssykKul> {
   final Stream<QuerySnapshot> reserves =
       FirebaseFirestore.instance.collection('reserves').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<IssykKul> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         if (snapshot.hasData) {
@@ -37,7 +39,10 @@ class _AlaArchaState extends State<IssykKul> {
             navigate: IssykKulDetailScreen(documentSnapshot: data),
           );
         }
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+            child: CircularProgressIndicator(
+          color: Colors.amber,
+        ));
       },
     );
   }

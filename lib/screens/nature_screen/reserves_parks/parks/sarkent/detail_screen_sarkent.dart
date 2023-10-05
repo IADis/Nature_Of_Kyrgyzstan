@@ -12,10 +12,10 @@ class DetailScreenSarkent extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<DetailScreenSarkent> createState() => _AlaArchaDetailScreenState();
+  State<DetailScreenSarkent> createState() => _DetailScreenSarkentState();
 }
 
-class _AlaArchaDetailScreenState extends State<DetailScreenSarkent> {
+class _DetailScreenSarkentState extends State<DetailScreenSarkent> {
   final _controller = PageController();
 
   @override

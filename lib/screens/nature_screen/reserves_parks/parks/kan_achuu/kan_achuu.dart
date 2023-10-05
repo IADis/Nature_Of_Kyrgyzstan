@@ -7,10 +7,10 @@ class KanAchuu extends StatefulWidget {
   const KanAchuu({super.key});
 
   @override
-  State<KanAchuu> createState() => _AlaArchaState();
+  State<KanAchuu> createState() => KanAchuuState();
 }
 
-class _AlaArchaState extends State<KanAchuu> {
+class KanAchuuState extends State<KanAchuu> {
   final Stream<QuerySnapshot> parks =
       FirebaseFirestore.instance.collection('parks').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<KanAchuu> {
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: Colors.amber,
+              ),
             );
           }
           final data = snapshot.data!.docs[10];

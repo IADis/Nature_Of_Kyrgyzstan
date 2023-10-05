@@ -9,10 +9,10 @@ class MushroomsScreen extends StatefulWidget {
   const MushroomsScreen({super.key});
 
   @override
-  State<MushroomsScreen> createState() => _LakesScreenState();
+  State<MushroomsScreen> createState() => _MushroomsScreenState();
 }
 
-class _LakesScreenState extends State<MushroomsScreen> {
+class _MushroomsScreenState extends State<MushroomsScreen> {
   @override
   Widget build(BuildContext context) {
     Stream<QuerySnapshot> mushrooms = FirebaseFirestore.instance

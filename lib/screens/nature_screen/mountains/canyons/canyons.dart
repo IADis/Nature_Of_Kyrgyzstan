@@ -35,7 +35,9 @@ class _CanyonsScreenState extends State<CanyonsScreen> {
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: Colors.amber,
+              ),
             );
           }
           if (snapshot.hasData) {

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nature_of_kyrgyzstan/firebase_options.dart';
-import 'package:nature_of_kyrgyzstan/screens/home_screen/home_screen.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/mountains/main_mountains/bloc/mountains_bloc.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/mountains/main_mountains/repository/mountain_repo.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/main_reserves/bloc/reserves_bloc.dart';
@@ -67,7 +66,7 @@ class MyApp extends StatelessWidget {
         ],
         child: const MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Flutter Demo',
+            title: 'Природа Кыргызстана',
             home: SplashScreen()),
       ),
     );

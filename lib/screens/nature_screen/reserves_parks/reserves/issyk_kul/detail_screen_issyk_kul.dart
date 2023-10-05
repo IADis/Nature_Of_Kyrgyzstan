@@ -12,10 +12,10 @@ class IssykKulDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<IssykKulDetailScreen> createState() => _AlaArchaDetailScreenState();
+  State<IssykKulDetailScreen> createState() => _IssykKulDetailScreenState();
 }
 
-class _AlaArchaDetailScreenState extends State<IssykKulDetailScreen> {
+class _IssykKulDetailScreenState extends State<IssykKulDetailScreen> {
   final _controller = PageController();
 
   @override

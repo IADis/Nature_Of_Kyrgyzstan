@@ -7,10 +7,10 @@ class KulunAta extends StatefulWidget {
   const KulunAta({super.key});
 
   @override
-  State<KulunAta> createState() => _AlaArchaState();
+  State<KulunAta> createState() => _KulunAtaState();
 }
 
-class _AlaArchaState extends State<KulunAta> {
+class _KulunAtaState extends State<KulunAta> {
   final Stream<QuerySnapshot> reserves =
       FirebaseFirestore.instance.collection('reserves').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<KulunAta> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         if (snapshot.hasData) {
@@ -37,7 +39,10 @@ class _AlaArchaState extends State<KulunAta> {
             navigate: KulunAtaDetailScreen(documentSnapshot: data),
           );
         }
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+            child: CircularProgressIndicator(
+          color: Colors.amber,
+        ));
       },
     );
   }

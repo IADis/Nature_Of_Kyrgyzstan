@@ -12,10 +12,10 @@ class AlatayDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<AlatayDetailScreen> createState() => _AlaArchaDetailScreenState();
+  State<AlatayDetailScreen> createState() => _AlatayDetailScreenState();
 }
 
-class _AlaArchaDetailScreenState extends State<AlatayDetailScreen> {
+class _AlatayDetailScreenState extends State<AlatayDetailScreen> {
   final _controller = PageController();
 
   @override

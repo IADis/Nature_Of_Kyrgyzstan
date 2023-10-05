@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/lakes/lakes.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/main_water_resourses/model/water_resourses_model.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/water_resources/reservoir/reservoirs.dart';

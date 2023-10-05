@@ -12,10 +12,10 @@ class KanAchuuDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<KanAchuuDetailScreen> createState() => _AlaArchaDetailScreenState();
+  State<KanAchuuDetailScreen> createState() => _KanAchuuDetailScreenState();
 }
 
-class _AlaArchaDetailScreenState extends State<KanAchuuDetailScreen> {
+class _KanAchuuDetailScreenState extends State<KanAchuuDetailScreen> {
   final _controller = PageController();
 
   @override

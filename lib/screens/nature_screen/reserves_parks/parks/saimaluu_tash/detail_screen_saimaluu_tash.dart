@@ -12,10 +12,11 @@ class DetailScreenSaimaluuTash extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<DetailScreenSaimaluuTash> createState() => _AlaArchaDetailScreenState();
+  State<DetailScreenSaimaluuTash> createState() =>
+      _DetailScreenSaimaluuTashState();
 }
 
-class _AlaArchaDetailScreenState extends State<DetailScreenSaimaluuTash> {
+class _DetailScreenSaimaluuTashState extends State<DetailScreenSaimaluuTash> {
   final _controller = PageController();
 
   @override

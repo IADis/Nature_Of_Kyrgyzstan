@@ -8,10 +8,10 @@ class Sarkent extends StatefulWidget {
   const Sarkent({super.key});
 
   @override
-  State<Sarkent> createState() => _AlaArchaState();
+  State<Sarkent> createState() => _SarkentState();
 }
 
-class _AlaArchaState extends State<Sarkent> {
+class _SarkentState extends State<Sarkent> {
   final Stream<QuerySnapshot> parks =
       FirebaseFirestore.instance.collection('parks').snapshots();
 
@@ -27,7 +27,9 @@ class _AlaArchaState extends State<Sarkent> {
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: Colors.amber,
+              ),
             );
           }
           final data = snapshot.data!.docs[9];

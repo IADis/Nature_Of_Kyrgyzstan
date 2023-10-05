@@ -7,10 +7,10 @@ class BeshAral extends StatefulWidget {
   const BeshAral({super.key});
 
   @override
-  State<BeshAral> createState() => _AlaArchaState();
+  State<BeshAral> createState() => _BeshAralState();
 }
 
-class _AlaArchaState extends State<BeshAral> {
+class _BeshAralState extends State<BeshAral> {
   final Stream<QuerySnapshot> reserves =
       FirebaseFirestore.instance.collection('reserves').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<BeshAral> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         if (snapshot.hasData) {
@@ -37,7 +39,10 @@ class _AlaArchaState extends State<BeshAral> {
             navigate: BeshAralDetailScreen(documentSnapshot: data),
           );
         }
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+            child: CircularProgressIndicator(
+          color: Colors.amber,
+        ));
       },
     );
   }

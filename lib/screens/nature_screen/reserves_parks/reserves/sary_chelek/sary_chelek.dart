@@ -7,10 +7,10 @@ class SaryChelek extends StatefulWidget {
   const SaryChelek({super.key});
 
   @override
-  State<SaryChelek> createState() => _AlaArchaState();
+  State<SaryChelek> createState() => _SaryChelekState();
 }
 
-class _AlaArchaState extends State<SaryChelek> {
+class _SaryChelekState extends State<SaryChelek> {
   final Stream<QuerySnapshot> reserves =
       FirebaseFirestore.instance.collection('reserves').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<SaryChelek> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         if (snapshot.hasData) {
@@ -37,7 +39,10 @@ class _AlaArchaState extends State<SaryChelek> {
             navigate: SaryChelekDetailScreen(documentSnapshot: data),
           );
         }
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+            child: CircularProgressIndicator(
+          color: Colors.amber,
+        ));
       },
     );
   }

@@ -12,10 +12,10 @@ class SaryChelekDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<SaryChelekDetailScreen> createState() => _AlaArchaDetailScreenState();
+  State<SaryChelekDetailScreen> createState() => _SaryChelekDetailScreenState();
 }
 
-class _AlaArchaDetailScreenState extends State<SaryChelekDetailScreen> {
+class _SaryChelekDetailScreenState extends State<SaryChelekDetailScreen> {
   final _controller = PageController();
 
   @override

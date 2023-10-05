@@ -29,12 +29,12 @@ class _HomeScreenState extends State<HomeScreen>
       body: screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: AppColors.scaffoldBackgroundColor,
-        unselectedItemColor: Colors.blueAccent,
-        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.black,
         iconSize: 28,
+        selectedIconTheme: const IconThemeData(color: Colors.green),
         selectedLabelStyle: GoogleFonts.montserrat(
-          fontWeight: FontWeight.w700,
-        ),
+            fontWeight: FontWeight.w700, color: Colors.black),
         unselectedLabelStyle: GoogleFonts.montserrat(
           fontWeight: FontWeight.w500,
         ),
@@ -58,7 +58,6 @@ class _HomeScreenState extends State<HomeScreen>
               BottomNavIcons.redbookactive,
               color: Colors.red,
             ),
-            backgroundColor: Colors.amber,
             icon: Icon(
               BottomNavIcons.redbook,
             ),

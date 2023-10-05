@@ -7,10 +7,10 @@ class Alatay extends StatefulWidget {
   const Alatay({super.key});
 
   @override
-  State<Alatay> createState() => _AlaArchaState();
+  State<Alatay> createState() => _AlatayState();
 }
 
-class _AlaArchaState extends State<Alatay> {
+class _AlatayState extends State<Alatay> {
   final Stream<QuerySnapshot> parks =
       FirebaseFirestore.instance.collection('parks').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<Alatay> {
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: Colors.amber,
+              ),
             );
           }
 

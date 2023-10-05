@@ -14,10 +14,10 @@ class MushroomsDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<MushroomsDetailScreen> createState() => _LakesDetailScreenState();
+  State<MushroomsDetailScreen> createState() => _MushroomsDetailScreenState();
 }
 
-class _LakesDetailScreenState extends State<MushroomsDetailScreen> {
+class _MushroomsDetailScreenState extends State<MushroomsDetailScreen> {
   PageController _pageController = PageController();
   double pageOffset = 0;
 

@@ -12,10 +12,10 @@ class SalkynTorDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<SalkynTorDetailScreen> createState() => _AlaArchaDetailScreenState();
+  State<SalkynTorDetailScreen> createState() => _SalkynTorDetailScreenState();
 }
 
-class _AlaArchaDetailScreenState extends State<SalkynTorDetailScreen> {
+class _SalkynTorDetailScreenState extends State<SalkynTorDetailScreen> {
   final _controller = PageController();
 
   @override

@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:nature_of_kyrgyzstan/screens/bottom_nav_icons_icons.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/mountains/canyons/canyons.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/mountains/glaciers/glaciers.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/mountains/gorges/gorges.dart';

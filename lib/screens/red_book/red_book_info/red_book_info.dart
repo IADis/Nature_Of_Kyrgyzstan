@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/components/app_colors.dart';
+import 'package:nature_of_kyrgyzstan/screens/widgets/app_bar.dart';
 import 'widgets/red_book_list.dart';
 
 class RedBookInfo extends StatefulWidget {
@@ -21,6 +22,7 @@ class _RedBookInfoState extends State<RedBookInfo> {
         foregroundColor: AppColors.appBarForegruoundColor,
         backgroundColor: AppColors.appBarBackgroundColor,
         elevation: 0,
+        leading: const AppBarWidget(elevation: 0),
       ),
       body: StreamBuilder(
         stream: redBook,

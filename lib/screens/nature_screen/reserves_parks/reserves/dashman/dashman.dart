@@ -8,10 +8,10 @@ class Dashman extends StatefulWidget {
   const Dashman({super.key});
 
   @override
-  State<Dashman> createState() => _AlaArchaState();
+  State<Dashman> createState() => _DashmanState();
 }
 
-class _AlaArchaState extends State<Dashman> {
+class _DashmanState extends State<Dashman> {
   final Stream<QuerySnapshot> reserves =
       FirebaseFirestore.instance.collection('reserves').snapshots();
 
@@ -27,7 +27,9 @@ class _AlaArchaState extends State<Dashman> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         if (snapshot.hasData) {
@@ -38,7 +40,10 @@ class _AlaArchaState extends State<Dashman> {
             navigate: DashmanDetailScreen(documentSnapshot: data),
           );
         }
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+            child: CircularProgressIndicator(
+          color: Colors.amber,
+        ));
       },
     );
   }

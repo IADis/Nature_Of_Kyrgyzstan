@@ -14,10 +14,10 @@ class KaratalKhapyrykDetailScreen extends StatefulWidget {
 
   @override
   State<KaratalKhapyrykDetailScreen> createState() =>
-      _AlaArchaDetailScreenState();
+      _KaratalKhapyrykDetailScreen();
 }
 
-class _AlaArchaDetailScreenState extends State<KaratalKhapyrykDetailScreen> {
+class _KaratalKhapyrykDetailScreen extends State<KaratalKhapyrykDetailScreen> {
   final _controller = PageController();
 
   @override

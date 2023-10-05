@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../components/app_text.dart';
+import '../../../../widgets/app_bar.dart';
+
 class KaraBuuraDetailScreen extends StatelessWidget {
   const KaraBuuraDetailScreen({super.key, required this.documentSnapshot});
   final DocumentSnapshot documentSnapshot;
@@ -8,7 +11,14 @@ class KaraBuuraDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: const AppBarWidget(
+        elevation: 4,
+      ),
+      body: Center(
+          child: Text(
+        'Нет Данных.',
+        style: AppText.mainTitleTextStyle,
+      )),
     );
   }
 }

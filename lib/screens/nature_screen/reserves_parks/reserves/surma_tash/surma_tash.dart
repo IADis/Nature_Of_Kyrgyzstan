@@ -7,10 +7,10 @@ class SurmaTash extends StatefulWidget {
   const SurmaTash({super.key});
 
   @override
-  State<SurmaTash> createState() => _AlaArchaState();
+  State<SurmaTash> createState() => _SurmaTashState();
 }
 
-class _AlaArchaState extends State<SurmaTash> {
+class _SurmaTashState extends State<SurmaTash> {
   final Stream<QuerySnapshot> reserves =
       FirebaseFirestore.instance.collection('reserves').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<SurmaTash> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         if (snapshot.hasData) {
@@ -37,7 +39,10 @@ class _AlaArchaState extends State<SurmaTash> {
             navigate: SurmaTashDetailScreen(documentSnapshot: data),
           );
         }
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+            child: CircularProgressIndicator(
+          color: Colors.amber,
+        ));
       },
     );
   }

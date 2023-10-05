@@ -12,10 +12,10 @@ class PadyshAtaDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<PadyshAtaDetailScreen> createState() => _AlaArchaDetailScreenState();
+  State<PadyshAtaDetailScreen> createState() => _PadyshAtaDetailScreenState();
 }
 
-class _AlaArchaDetailScreenState extends State<PadyshAtaDetailScreen> {
+class _PadyshAtaDetailScreenState extends State<PadyshAtaDetailScreen> {
   final _controller = PageController();
 
   @override

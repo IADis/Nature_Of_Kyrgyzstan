@@ -11,10 +11,10 @@ class MammalsScreen extends StatefulWidget {
   const MammalsScreen({super.key});
 
   @override
-  State<MammalsScreen> createState() => _LakesScreenState();
+  State<MammalsScreen> createState() => _MammalsScreenState();
 }
 
-class _LakesScreenState extends State<MammalsScreen> {
+class _MammalsScreenState extends State<MammalsScreen> {
   bool _switchList = true;
 
   late final SharedPreferences prefs;

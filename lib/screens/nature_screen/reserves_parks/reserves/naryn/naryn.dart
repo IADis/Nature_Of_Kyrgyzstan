@@ -7,10 +7,10 @@ class Naryn extends StatefulWidget {
   const Naryn({super.key});
 
   @override
-  State<Naryn> createState() => _AlaArchaState();
+  State<Naryn> createState() => _NarynState();
 }
 
-class _AlaArchaState extends State<Naryn> {
+class _NarynState extends State<Naryn> {
   final Stream<QuerySnapshot> reserves =
       FirebaseFirestore.instance.collection('reserves').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<Naryn> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         if (snapshot.hasData) {
@@ -37,7 +39,10 @@ class _AlaArchaState extends State<Naryn> {
             navigate: NarynDetailScreen(documentSnapshot: data),
           );
         }
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+            child: CircularProgressIndicator(
+          color: Colors.amber,
+        ));
       },
     );
   }

@@ -7,10 +7,10 @@ class SalkynTor extends StatefulWidget {
   const SalkynTor({super.key});
 
   @override
-  State<SalkynTor> createState() => _AlaArchaState();
+  State<SalkynTor> createState() => _SalkynTorState();
 }
 
-class _AlaArchaState extends State<SalkynTor> {
+class _SalkynTorState extends State<SalkynTor> {
   final Stream<QuerySnapshot> parks =
       FirebaseFirestore.instance.collection('parks').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<SalkynTor> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         final data = snapshot.data!.docs[12];

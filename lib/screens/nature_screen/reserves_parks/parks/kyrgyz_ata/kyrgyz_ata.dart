@@ -8,10 +8,10 @@ class KyrgyzAta extends StatefulWidget {
   const KyrgyzAta({super.key});
 
   @override
-  State<KyrgyzAta> createState() => _AlaArchaState();
+  State<KyrgyzAta> createState() => _KyrgyzAtaState();
 }
 
-class _AlaArchaState extends State<KyrgyzAta> {
+class _KyrgyzAtaState extends State<KyrgyzAta> {
   final Stream<QuerySnapshot> parks =
       FirebaseFirestore.instance.collection('parks').snapshots();
 
@@ -27,7 +27,9 @@ class _AlaArchaState extends State<KyrgyzAta> {
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: Colors.amber,
+              ),
             );
           }
           final data = snapshot.data!.docs[2];

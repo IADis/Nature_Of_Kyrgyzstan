@@ -14,10 +14,10 @@ class BirdsDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<BirdsDetailScreen> createState() => _LakesDetailScreenState();
+  State<BirdsDetailScreen> createState() => _BirdsDetailScreenState();
 }
 
-class _LakesDetailScreenState extends State<BirdsDetailScreen> {
+class _BirdsDetailScreenState extends State<BirdsDetailScreen> {
   PageController _pageController = PageController();
   double pageOffset = 0;
 

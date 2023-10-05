@@ -8,10 +8,10 @@ class BeshTash extends StatefulWidget {
   const BeshTash({super.key});
 
   @override
-  State<BeshTash> createState() => _AlaArchaState();
+  State<BeshTash> createState() => _BeshTashState();
 }
 
-class _AlaArchaState extends State<BeshTash> {
+class _BeshTashState extends State<BeshTash> {
   final Stream<QuerySnapshot> parks =
       FirebaseFirestore.instance.collection('parks').snapshots();
 
@@ -27,7 +27,9 @@ class _AlaArchaState extends State<BeshTash> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         final data = snapshot.data!.docs[4];

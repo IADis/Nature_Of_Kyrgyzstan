@@ -12,10 +12,10 @@ class KhanTeniriDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<KhanTeniriDetailScreen> createState() => _AlaArchaDetailScreenState();
+  State<KhanTeniriDetailScreen> createState() => _KhanTeniriDetailScreenState();
 }
 
-class _AlaArchaDetailScreenState extends State<KhanTeniriDetailScreen> {
+class _KhanTeniriDetailScreenState extends State<KhanTeniriDetailScreen> {
   final _controller = PageController();
 
   @override

@@ -7,10 +7,10 @@ class SarychatErtash extends StatefulWidget {
   const SarychatErtash({super.key});
 
   @override
-  State<SarychatErtash> createState() => _AlaArchaState();
+  State<SarychatErtash> createState() => _SarychatErtashState();
 }
 
-class _AlaArchaState extends State<SarychatErtash> {
+class _SarychatErtashState extends State<SarychatErtash> {
   final Stream<QuerySnapshot> reserves =
       FirebaseFirestore.instance.collection('reserves').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<SarychatErtash> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         if (snapshot.hasData) {
@@ -37,7 +39,10 @@ class _AlaArchaState extends State<SarychatErtash> {
             navigate: SarychatErtashDetailScreen(documentSnapshot: data),
           );
         }
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+            child: CircularProgressIndicator(
+          color: Colors.amber,
+        ));
       },
     );
   }

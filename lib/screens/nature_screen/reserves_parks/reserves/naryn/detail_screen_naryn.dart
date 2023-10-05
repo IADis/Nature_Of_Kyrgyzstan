@@ -12,10 +12,10 @@ class NarynDetailScreen extends StatefulWidget {
   final DocumentSnapshot documentSnapshot;
 
   @override
-  State<NarynDetailScreen> createState() => _AlaArchaDetailScreenState();
+  State<NarynDetailScreen> createState() => _NarynDetailScreenState();
 }
 
-class _AlaArchaDetailScreenState extends State<NarynDetailScreen> {
+class _NarynDetailScreenState extends State<NarynDetailScreen> {
   final _controller = PageController();
 
   @override

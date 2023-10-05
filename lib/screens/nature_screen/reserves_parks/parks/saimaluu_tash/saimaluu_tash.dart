@@ -7,10 +7,10 @@ class SaimaluuTash extends StatefulWidget {
   const SaimaluuTash({super.key});
 
   @override
-  State<SaimaluuTash> createState() => _AlaArchaState();
+  State<SaimaluuTash> createState() => _SaimaluuTashState();
 }
 
-class _AlaArchaState extends State<SaimaluuTash> {
+class _SaimaluuTashState extends State<SaimaluuTash> {
   final Stream<QuerySnapshot> parks =
       FirebaseFirestore.instance.collection('parks').snapshots();
 
@@ -26,7 +26,9 @@ class _AlaArchaState extends State<SaimaluuTash> {
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              color: Colors.amber,
+            ),
           );
         }
         final data = snapshot.data!.docs[0];

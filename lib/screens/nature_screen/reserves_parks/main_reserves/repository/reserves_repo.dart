@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/general_info/general_info.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/main_reserves/model/reserves_model.dart';
 import 'package:nature_of_kyrgyzstan/screens/nature_screen/reserves_parks/parks/parks.dart';
